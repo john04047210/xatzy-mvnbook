@@ -2,8 +2,6 @@
 tomcat_1:
   image: tomcat:latest
   environment:
-    - VIRTUAL_HOST=xatzy.qiaopeng007.cn
-    - VIRTUAL_PORT=8080
     - MVNBOOK_DB_URL=jdbc:mysql://mysql:3306/mvnbook?useUnicode=true&amp;characterEncoding=UTF-8
     - MVNBOOK_DB_NAME=mvnbook
     - MVNBOOK_DB_USER=mvnbook
@@ -25,10 +23,10 @@ db:
     - ./docker/mysql/conf.d:/etc/mysql/mariadb.conf.d
 
 nginx:
-  image: jwilder/nginx-proxy:latest
+  image: nginx
   ports:
     - "80:80"
   volumes:
-    - "/var/run/docker.sock:/tmp/docker.sock:ro"
+    - "./docker/nginx/conf:/etc/nginx/conf.d"
   links:
     - tomcat_1
