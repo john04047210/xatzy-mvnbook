@@ -6,6 +6,7 @@ tomcat_1:
     - MVNBOOK_DB_NAME=mvnbook
     - MVNBOOK_DB_USER=mvnbook
     - MVNBOOK_DB_PASS=dbpass123
+    - MVNBOOK_TMP_PATH=/tmp
   volumes:
     - "./docker/tomcat/webapps:/usr/local/tomcat/webapps"
   links:

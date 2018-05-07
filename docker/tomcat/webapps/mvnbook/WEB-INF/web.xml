@@ -256,6 +256,8 @@
         <url-pattern>/async/diaocha/getrsjiaocai.cc</url-pattern>
         <!-- 教师为单位的统计结果 -->
         <url-pattern>/async/diaocha/getrsjiaoshi.cc</url-pattern>
+        <!-- 教材历史评价统计结果 -->
+        <url-pattern>/async/diaocha/getpjhistory.cc</url-pattern>
     </servlet-mapping>
 
 
