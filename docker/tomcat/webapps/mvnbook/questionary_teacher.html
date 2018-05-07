@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>教材评价(老师)</title>
+    <!-- Bootstrap Styles-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css" rel="stylesheet">-->
+
+    <!-- jQuery Select Sytles -->
+    <link href="jquerySelect/css/bootstrap-select.min.css" rel="stylesheet"/>
+
+    <style>
+        .table-bordered {
+            border: 2px solid #ddd;
+        }
+        .table-center {
+            text-align:center;
+            align:center;
+            vertical-align: middle !important;
+        }
+        .table-break {
+            word-wrap:break-word;
+        }
+        .table-backimg-paper {
+            background-image: url(res/themes/images/paper.gif);
+            background-position: left top;
+            background-repeat: repeat;
+            #padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="display:none;">
+    <table class="table table-bordered table-hover table-center table-break">
+        <caption class="table-center">
+            <div><h2>西安铁路职业技术学院</h2></div>
+            <div id="table_term">2016-2017-01学期</div>
+            <div><h5>教材使用适用性调查表(教师用)</h5></div>
+        </caption>
+        <thead>
+        <tr>
+            <th colspan=9>
+                <p style="text-indent:30px;">为了准确掌握我校教学所使用的教材质量，做好教材质量的信息反馈，进一步提高教材选用质量，及时了解老师们对所使用教材的意见和建议，请您对本学期所用的教材进行客观、公正的评价。您的评价对提高学校教学质量和保证人才培养质量都将起到重要作用。请您把教材使用情况按下列指标进行评价。谢谢！</p>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan=2>教材</td>
+            <td>主编姓名</td>
+            <td colspan=2>教材名称</td>
+            <td width="240px">出版社</td>
+            <td width="180px">ISBN号</td>
+            <td colspan=3>出版时间</td>
+        </tr>
+        <tr>
+            <td><div id="book_author"></div></td>
+            <td colspan=2><div id="book_title"></div></td>
+            <td><div id="book_publish"></div></td>
+            <td><div id="book_isbn"></div></td>
+            <td colspan=3><div id="book_ptime"></div></td>
+        </tr>
+        <tr>
+            <td rowspan=4>评议人</td>
+            <td>姓名</td>
+            <td colspan=2>职务(职称)</td>
+            <td colspan=2>系(部)</td>
+            <td colspan=3>填表时间</td>
+        </tr>
+        <tr>
+            <td><div id="name">赵飞燕</div></td>
+            <td colspan=2><div id="zhiwu">教授</div></td>
+            <td colspan=2><div id="class">电气工程系</div></td>
+            <td colspan=3><div id="ctime">2016-11-10</div></td>
+        </tr>
+        <tr>
+            <td>所授课程</td>
+            <td colspan=7><div id="kecheng">机电一体化315110</div></td>
+        </tr>
+        <tr>
+            <td>授课班级</td>
+            <td colspan=7><div id="banji">机电一体化315110</div></td>
+        </tr>
+        <tr>
+            <td width="100px">一级指标</td>
+            <td width="100px">二级指标</td>
+            <td width="100px">三级指标</td>
+            <td colspan=3>最佳状态描述</td>
+            <td>好</td>
+            <td>一般</td>
+            <td>差</td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=12>内容质量</td>
+            <td class="table-center" rowspan=4>教学水平</td>
+            <td>类别规范性</td>
+            <td colspan=3 align="left">是高职高专教材，符合教育部指定的规划教材、精品课教材或其他     类获奖教材（获得省部级以上奖励教材）</td>
+            <td width="50px"><input type="radio" name="R-1-1-1" id="R-1-1-1-10" value="10"></td>
+            <td width="50px"><input type="radio" name="R-1-1-1" id="R-1-1-1-8" value="8"></td>
+            <td width="50px"><input type="radio" name="R-1-1-1" id="R-1-1-1-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>教学适应性</td>
+            <td colspan=3 align="left">符合人才培养目标及本课程教学大纲的要求：取材合适、深度适宜、份量恰当，适宜我校学生的程度</td>
+            <td><input type="radio" name="R-1-1-2" id="R-1-1-2-10" value="10"></td>
+            <td><input type="radio" name="R-1-1-2" id="R-1-1-2-8" value="8"></td>
+            <td><input type="radio" name="R-1-1-2" id="R-1-1-2-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>认识规律性</td>
+            <td colspan=3 align="left">符合认知规律，富有启发性，便于学习，有利于激发学生兴趣及各种能力的培养</td>
+            <td><input type="radio" name="R-1-1-3" id="R-1-1-3-10" value="10"></td>
+            <td><input type="radio" name="R-1-1-3" id="R-1-1-3-8" value="8"></td>
+            <td><input type="radio" name="R-1-1-3" id="R-1-1-3-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>结构完整性</td>
+            <td colspan=3 align="left">绪论、正文、习题（思考题）、索引、参考文献齐全，教学组织结构合理，学习路径明确，知识关联清晰</td>
+            <td><input type="radio" name="R-1-1-4" id="R-1-1-4-10" value="10"></td>
+            <td><input type="radio" name="R-1-1-4" id="R-1-1-4-8" value="8"></td>
+            <td><input type="radio" name="R-1-1-4" id="R-1-1-4-6" value="6"></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=3>科学水平</td>
+            <td>先进性</td>
+            <td colspan=3 align="left">能反映本学科科技发展的新信息、新知识、新工艺、新方法、新规范、新标准，是近年来公开出版的最新教材</td>
+            <td><input type="radio" name="R-1-2-1" id="R-1-2-1-10" value="10"></td>
+            <td><input type="radio" name="R-1-2-1" id="R-1-2-1-8" value="8"></td>
+            <td><input type="radio" name="R-1-2-1" id="R-1-2-1-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>系统性</td>
+            <td colspan=3 align="left">能完整的表达本课程所包含的基本知识和深化拓展知识，无需另外补充相关知识点</td>
+            <td><input type="radio" name="R-1-2-2" id="R-1-2-2-10" value="10"></td>
+            <td><input type="radio" name="R-1-2-2" id="R-1-2-2-8" value="8"></td>
+            <td><input type="radio" name="R-1-2-2" id="R-1-2-2-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>实践性</td>
+            <td colspan=3 align="left">注重理论联系实际</td>
+            <td><input type="radio" name="R-1-2-3" id="R-1-2-3-10" value="10"></td>
+            <td><input type="radio" name="R-1-2-3" id="R-1-2-3-8" value="8"></td>
+            <td><input type="radio" name="R-1-2-3" id="R-1-2-3-6" value="6"></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=3>思想水平</td>
+            <td>思想性</td>
+            <td colspan=3 align="left">观点正确，内容积极，赋予现实意义</td>
+            <td><input type="radio" name="R-1-3-1" id="R-1-3-1-10" value="10"></td>
+            <td><input type="radio" name="R-1-3-1" id="R-1-3-1-8" value="8"></td>
+            <td><input type="radio" name="R-1-3-1" id="R-1-3-1-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>逻辑性</td>
+            <td colspan=3 align="left">层次分明，条理清楚，便于教学</td>
+            <td><input type="radio" name="R-1-3-2" id="R-1-3-2-10" value="10"></td>
+            <td><input type="radio" name="R-1-3-2" id="R-1-3-2-8" value="8"></td>
+            <td><input type="radio" name="R-1-3-2" id="R-1-3-2-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>关联性</td>
+            <td colspan=3 align="left">教材体系能反映内容的内在联系和本专业特有的思维方法</td>
+            <td><input type="radio" name="R-1-3-3" id="R-1-3-3-10" value="10"></td>
+            <td><input type="radio" name="R-1-3-3" id="R-1-3-3-8" value="8"></td>
+            <td><input type="radio" name="R-1-3-3" id="R-1-3-3-6" value="6"></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=2>文图水平</td>
+            <td>语言文字</td>
+            <td colspan=3 align="left">文字规范、简练、符合语法规则，语言流畅、通俗易懂、叙述生动</td>
+            <td><input type="radio" name="R-1-4-1" id="R-1-4-1-10" value="10"></td>
+            <td><input type="radio" name="R-1-4-1" id="R-1-4-1-8" value="8"></td>
+            <td><input type="radio" name="R-1-4-1" id="R-1-4-1-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>图表符号</td>
+            <td colspan=3 align="left">图文并茂，图表设计清晰，标点、符号、公式、数据、计量单位使用标准规范</td>
+            <td><input type="radio" name="R-1-4-2" id="R-1-4-2-10" value="10"></td>
+            <td><input type="radio" name="R-1-4-2" id="R-1-4-2-8" value="8"></td>
+            <td><input type="radio" name="R-1-4-2" id="R-1-4-2-6" value="6"></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=4>编校质量</td>
+            <td class="table-center" rowspan=2>设计水平</td>
+            <td>封面设计</td>
+            <td colspan=3 align="left">封面、扉页、封底能恰当反映本书内容，色彩和谐</td>
+            <td><input type="radio" name="R-2-1-1" id="R-2-1-1-10" value="10"></td>
+            <td><input type="radio" name="R-2-1-1" id="R-2-1-1-8" value="8"></td>
+            <td><input type="radio" name="R-2-1-1" id="R-2-1-1-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>版式设计</td>
+            <td colspan=3 align="left">规范、统一，字号字型、序号使用合理符合阅读心理</td>
+            <td><input type="radio" name="R-2-1-2" id="R-2-1-2-10" value="10"></td>
+            <td><input type="radio" name="R-2-1-2" id="R-2-1-2-8" value="8"></td>
+            <td><input type="radio" name="R-2-1-2" id="R-2-1-2-6" value="6"></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=2>出版水平</td>
+            <td>印刷质量</td>
+            <td colspan=3 align="left">字迹清楚、纸张良好</td>
+            <td><input type="radio" name="R-2-2-1" id="R-2-2-1-10" value="10"></td>
+            <td><input type="radio" name="R-2-2-1" id="R-2-2-1-8" value="8"></td>
+            <td><input type="radio" name="R-2-2-1" id="R-2-2-1-6" value="6"></td>
+        </tr>
+        <tr>
+            <td>装订质量</td>
+            <td colspan=3 align="left">装订平整：无缺页、白页、脏页、无颠倒、顶头、倒头</td>
+            <td><input type="radio" name="R-2-2-2" id="R-2-2-2-10" value="10"></td>
+            <td><input type="radio" name="R-2-2-2" id="R-2-2-2-8" value="8"></td>
+            <td><input type="radio" name="R-2-2-2" id="R-2-2-2-6" value="6"></td>
+        </tr>
+        <tr>
+            <td colspan=9 align="left">
+                <div style="float:left;">您对于该本教材的推荐意见：</div>
+                <div style="float:left;margin-left:120px;"><input type="radio" name="R-3-1-1" id="R-3-1-1-10" value="10"><label for="R-3-1-1-10">推荐使用</label></div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="R-3-1-1" id="R-3-1-1-8" value="8"><label for="R-3-1-1-8">勉强使用</label></div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="R-3-1-1" id="R-3-1-1-6" value="6"><label for="R-3-1-1-6">不推荐使用</label></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=9 align="left">
+                <div>综合评议说明：</div>
+                <div style="margin-top:10px;"><textarea id="commond" class="form-control" style="width:100%;" maxlength="200" rows="3"></textarea></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="uuid" style="display:none"></div>
+    <div>
+        <button type="button" id="tijiao" class="btn btn-primary btn-lg">提交</button>
+    </div>
+</div>
+<!-- .modal start -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">教材调查</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="inputTeacher" class="col-sm-2 control-label"><span style="letter-spacing:18px;">教</span>师</label>
+                <div class="col-sm-9">
+                    <select data-width="400px" name="inputTeacher"
+                             id="inputTeacher" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true"
+                             onchange="javascript:getKechengInfo();">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputTeacherOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputKecheng" class="col-sm-2 control-label"><span style="letter-spacing:18px;">课</span>程</label>
+                <div class="col-sm-8">
+                    <select data-width="400px" name="inputKecheng"
+                             id="inputKecheng" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true"
+                             onchange="javascript:getBookInfo();">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputKechengOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputBook" class="col-sm-2 control-label"><span style="letter-spacing:18px;">教</span>材</label>
+                <div class="col-sm-8">
+                    <select  data-width="400px" name="inputBook"
+                             id="inputBook" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputBookOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputBook" class="col-sm-2 control-label"><span style="letter-spacing:18px;">班</span>级</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" style="width:400px;background-color:#fff;" readonly="readonly" rows="3" id="inputBanjiOption"></textarea>
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="modal_button">开始</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- .modal end -->
+
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Bootstrap Js -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.js"></script>-->
+
+<!-- jQuery Select Js -->
+<script src="jquerySelect/bootstrap-select.min.js"></script>
+<script src="res/js/constant.js"></script>
+
+<script>
+    var pro = com.global.project;
+    var str = '';
+    var kechengSize = 0;
+    $(function(){
+        $('#tijiao').click(function(){
+            //alert($('#commond').val());
+            tijiao();
+        });
+        $('#modal_button').click(function(){
+            init();
+            $('.container').show();
+            $('#myModal').modal('hide');
+
+        });
+        $.get('/'+pro+'/async/table/getdiaocaiteacher.cc',function(data,status){
+            if(data.code == 200) {
+                $("#inputTeacherOption").empty();
+                $("#inputTeacherOption").append('<option value="">请选择</option>');
+                bookList = data.data;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    var zhiwu = '';
+                    if(book.zhiwu != '') {
+                         zhiwu = '('+book.zhiwu+')';
+                    }
+                    $("#inputTeacherOption").append('<option value="'+book.jiaoshi_id+'">'+book.jiaoshi+zhiwu+'</option>');
+                }
+                $('.selectpicker').selectpicker('refresh');
+            }
+        });
+
+        $('.container').hide();
+        $('#modal_button').attr('disabled',true);
+        $('#myModal').modal('show');
+        var mydate = new Date();
+        var year = mydate.getFullYear();
+        var month = mydate.getMonth()+1;
+        var day = mydate.getDate();
+        $('#ctime').text(year+'-'+month+'-'+day);
+    });
+
+    function getKechengInfo() {
+        var jiaoshi_id = $('#inputTeacherOption option:selected').val();
+        var param = {"jiaoshi_id":jiaoshi_id};
+        $.post('/'+pro+'/async/table/getdiaocaiteacher.cc',param,function(data,status){
+            if(data.code == 200) {
+                $("#inputKechengOption").empty();
+                $("#inputKechengOption").append('<option value="" selected>请选择</option>');
+                $("#inputBookOption").empty();
+                $("#inputBookOption").append('<option value="" selected>请选择</option>');
+                $("#inputBanjiOption").val('');
+                bookList = data.data;
+                var cnt = 0;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    if(str.indexOf(book.kecheng) >= 0) {
+                        // 已经评价过了
+                    } else {
+                        $("#inputKechengOption").append('<option value="'+book.kecheng_id+'">'+book.kecheng+'</option>');
+                        cnt++;
+                    }
+                }
+                kechengSize = cnt;
+                $('.selectpicker').selectpicker('refresh');
+                $('#modal_button').attr('disabled',true);
+            }
+        });
+    }
+
+    function getBookInfo() {
+        var jiaoshi_id = $('#inputTeacherOption option:selected').val();
+        var kecheng_id = $('#inputKechengOption option:selected').val();
+        var param = {"jiaoshi_id":jiaoshi_id,"kecheng_id":kecheng_id};
+        $.post('/'+pro+'/async/table/getdiaocaiteacher.cc',param,function(data,status){
+            if(data.code == 200) {
+                $("#inputBookOption").empty();
+                $("#inputBanjiOption").val('');
+                bookList = data.data;
+                var banji = '';
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    banji = book.banji+"\r\n";
+                    $("#inputBookOption").append('<option value="'+book.isbn+'" selected>'+book.jiaocai+'('+book.banbie+' '+book.bankuang+')'+'</option>');
+                }
+                $('.selectpicker').selectpicker('refresh');
+                $('#modal_button').attr('disabled',false);
+                getBanjiInfo();
+            }
+        });
+    }
+    
+    function getBanjiInfo() {
+        var jiaoshi_id = $('#inputTeacherOption option:selected').val();
+        var kecheng_id = $('#inputKechengOption option:selected').val();
+        var jiaocai_id = $('#inputBookOption option:selected').val();
+        var param = {"jiaoshi_id":jiaoshi_id,"kecheng_id":kecheng_id,"jiaocai":jiaocai_id};
+        $.post('/'+pro+'/async/table/getdiaocaiteacher.cc',param,function(data,status){
+            if(data.code == 200) {
+                bookList = data.data;
+                var banji = '';
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    if(i>0) {
+                        banji = banji+"\r\n"+book.banji+'('+book.yuanxi+')';
+                    } else {
+                        banji = book.banji+'('+book.yuanxi+')';
+                    }
+                }
+                $("#inputBanjiOption").val(banji);
+            }
+        });
+    }
+
+    function init() {
+        var jiaoshi_id = $('#inputTeacherOption option:selected').val();
+        var kecheng_id = $('#inputKechengOption option:selected').val();
+        var jiaocai_id = $('#inputBookOption option:selected').val();
+        var param = {"jiaoshi_id":jiaoshi_id,"kecheng_id":kecheng_id,"jiaocai":jiaocai_id,"detail":1};
+        $.post('/'+pro+'/async/table/getdiaocaiteacher.cc',param,function(data,status){
+            if(data.code == 200) {
+                bookList = data.data;
+                var banji = '';
+                var uuid = '';
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    if(i>0) {
+                        banji = banji+";"+book.banji;
+                        uuid = uuid+","+book.uuid;
+                    } else {
+                        $('#table_term').text(book.term);
+                        $('#book_author').text(book.zuozhe);
+                        $('#book_title').text(book.jiaocai);
+                        $('#book_publish').text(book.banbie);
+                        $('#book_isbn').text(book.isbn);
+                        $('#name').text(book.jiaoshi);
+                        $('#zhiwu').text(book.zhiwu);
+                        $('#class').text(book.yuanxi);
+                        $('#kecheng').text(book.kecheng);
+                        banji = book.banji;
+                        uuid = book.uuid;
+                    }
+                }
+                $('#commond').val('');
+                $("#banji").text(banji);
+                $("#uuid").text(uuid);
+                $('.container').show();
+                $('#tijiao').attr('disabled',false);
+            }
+        });
+    }
+
+    function checkIsChecked() {
+        return true;
+    }
+
+    function tijiao() {
+        var msg = '';
+        if(!checkIsChecked()) {
+            return;
+        }
+        $.ajax({
+            url:'async/diaocha/teacher.cc',
+            type:'POST',
+            async:true,
+            dataType:'json',
+            processData:true,
+            contentType:"application/json; charset=UTF-8",
+            data:JSON.stringify({'uuid':$('#uuid').text(),
+                'Q1_1':$('input[name="R-1-1-1"]:checked').val(),
+                'Q1_2':$('input[name="R-1-1-2"]:checked').val(),
+                'Q1_3':$('input[name="R-1-1-3"]:checked').val(),
+                'Q1_4':$('input[name="R-1-1-4"]:checked').val(),
+                'Q2_1':$('input[name="R-1-2-1"]:checked').val(),
+                'Q2_2':$('input[name="R-1-2-2"]:checked').val(),
+                'Q2_3':$('input[name="R-1-2-3"]:checked').val(),
+                'Q3_1':$('input[name="R-1-3-1"]:checked').val(),
+                'Q3_2':$('input[name="R-1-3-2"]:checked').val(),
+                'Q3_3':$('input[name="R-1-3-3"]:checked').val(),
+                'Q1_sum':0,
+                'Q4_1':$('input[name="R-1-4-1"]:checked').val(),
+                'Q4_2':$('input[name="R-1-4-2"]:checked').val(),
+                'Q5_1':$('input[name="R-2-1-1"]:checked').val(),
+                'Q5_2':$('input[name="R-2-1-2"]:checked').val(),
+                'Q6_1':$('input[name="R-2-2-1"]:checked').val(),
+                'Q6_2':$('input[name="R-2-2-2"]:checked').val(),
+                'Q7_1':$('input[name="R-3-1-1"]:checked').val(),
+                'Tcomments':$('#commond').val()
+            }),
+            success:function(resp){
+                if(200 == resp.code) {
+                    $('#tijiao').attr('disabled',true);
+                    str = str + $('#kecheng').text() + ',';
+                    alert('提交成功');
+                    if(kechengSize >= 2) {
+                        ss = kechengSize-1;
+                        r = confirm("您还有"+ss+"本教材需要评价, 是否继续?");
+                        if(true==r) {
+                            getKechengInfo();
+                            $('.container').hide();
+                            $('#modal_button').attr('disabled',true);
+                            $('#myModal').modal('show');
+                        } else {
+                            window.location.href='index.html';
+                        }
+                    } else {
+                        window.location.href='index.html';
+                    }
+                } else if(401 == resp.code) {
+                    alert('登陆失效，请重新登陆');
+                } else {
+                    alert('resp.msg');
+                }
+            },
+            error:function(err){
+                alert('错误','服务器错误');
+            }
+        });
+        return;
+    }
+</script>
+<!-- Latest compiled and minified Locales -->
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/locale/bootstrap-table-zh-CN.min.js"></script>-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	
+    <title>mvnbook</title>
+    
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./jeasyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="./jeasyui/themes/icon.css">
+
+    <link rel="stylesheet" type="text/css" href="./uploadify/uploadify.css">
+
+    <script src="jeasyui/jquery.min.js" type="text/javascript"></script>
+    <script src="jeasyui/jquery.tmpl.min.js" type="text/javascript"></script>
+
+    <script src="jeasyui/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="jeasyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+    
+    <!-- datagrid pagination local -->
+    <script src="jeasyui/plugins/ext/jquery.datagrid.js" type="text/javascript"></script>
+    <script src="jeasyui/plugins/ext/jquery.textbox.js" type="text/javascript"></script>
+    <script src="jeasyui/plugins/ext/jquery.validatebox.js" type="text/javascript"></script>
+    <!-- uploadify -->
+    <script src="uploadify/jquery.uploadify.js" type="text/javascript"></script>
+
+    <style>
+    	#head {
+    		background-color: #d8e4fe;
+    		height: 60px;
+    	}
+    	
+    	#footer {
+    		width: 100%;
+    		text-align: center;
+    		line-height: 50px;
+    	}
+    </style>
+
+  </head>
+  
+  <body class="easyui-layout">
+
+    <div data-options="region:'north',split:false" style="overflow:hidden;">
+      <div id="head"></div>
+    </div>
+    <!-- north -->
+    <div data-options="region:'south',split:false" style="overflow:hidden;">
+      <div id="footer"><span>版权所有: <a href="www.shilikaif.com">实力开发工作组</a> 陕ICP备16010725号</span></div>
+    </div>
+    <!-- footer -->
+    <div data-options="region:'west',title:'导航菜单',split:false" style="width:160px;">
+      <ul id="side-menu" class="easyui-tree"></ul>
+    </div>
+    <!-- west -->
+    <div data-options="region:'center'" style="overflow:hidden;padding-right:1px;">
+      <div id="tabs" class="easyui-tabs" border="false" data-options="fit:true">
+      	<div title="注意事项"></div>
+      </div>
+      <!-- tabs -->
+    </div>
+    <!-- center -->
+    <div id="dlgPopup"></div>
+    <script src="res/js/constant.js" type="text/javascript"></script>
+    <script src="res/js/swfobject.js" type="text/javascript"></script>
+    <script src="res/js/downloadify.min.js" type="text/javascript"></script>
+    <script src="res/js/firstloader.js" type="text/javascript"></script>
+    <script src="res/js/datagrid_common_css.js" type="text/javascript"></script>
+  </body>
+</html>

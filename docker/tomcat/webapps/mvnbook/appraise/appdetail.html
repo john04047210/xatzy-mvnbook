@@ -1,0 +1,61 @@
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',split:false,border:false" style="margin:2px 0 2px 3px;overflow:hidden;">
+        <div id="appdetail_tb_searcher" class="easyui-panel" data-options="border:false">
+            <form id="appdetailSearcherForm" class="easyui-form" data-options="novalidate:true" style="margin:2px;">
+                <input id="appdetailSearcher" class="easyui-searchbox easyui-validatebox" style="width:300px"
+                       data-options="searcher:searchappdetail,prompt:'Please Input Value',menu:'#appdetailSearcher_mm',required:false" />
+                <div id="appdetailSearcher_mm" style="width:120px">
+                    <div data-options="name:'jiaocai',iconCls:'icon-ok'">教材</div>
+                    <div data-options="name:'banji',iconCls:'icon-ok'">班级</div>
+                    <div data-options="name:'jiaoshi',iconCls:'icon-ok'">教师</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
+        <table id="appdetail_dg" class="easyui-datagrid" style="height:570px;" data-options="
+                rownumbers:true,
+                singleSelect:false,
+                autoRowHeight:false,
+                fitColumns:true,
+                resizeHandle:'right',
+                striped:true,
+                nowrap:true,
+                fit:true,
+                loadMsg:'数据加载中...',
+                toolbar:'#appdetail_tb_edit'">
+            <thead>
+            <tr>
+                <th data-options="field:'uuid',hidden:true,width:100,fixed:true,align:'left'">uuid</th>
+                <th data-options="field:'jiaocai',width:100,fixed:false,align:'left'">教材</th>
+                <th data-options="field:'banji',width:120,fixed:true,align:'left'">班级</th>
+                <th data-options="field:'kecheng',width:180,fixed:true,align:'left'">课程</th>
+                <th data-options="field:'jiaoshi',width:120,fixed:true,align:'left'">教师</th>
+                <th data-options="field:'renshu',width:70,fixed:true,align:'center'">班级人数</th>
+                <th data-options="field:'renshu3',width:70,fixed:true,align:'center'">评价人数</th>
+                <th data-options="field:'q1_sum_t',width:70,fixed:true,align:'center'">教师打分</th>
+                <th data-options="field:'q1_sum_s',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){return Math.round(value/row.renshu3);}return value;}">班级打分</th>
+                <th data-options="field:'q3_2_t',width:70,fixed:true,align:'center'">教师推荐</th>
+                <th data-options="field:'q3_2_s',width:70,fixed:true,align:'center'">班级推荐</th>
+                <th data-options="field:'dingjia',width:50,fixed:true,align:'center',formatter:formatterDetail"></th>
+                <th data-options="field:'Scomments',width:170,fixed:false,align:'center'">班级评价</th>
+                <th data-options="field:'Tcomments',width:170,fixed:false,align:'center'">教师评价</th>
+            </tr>
+            </thead>
+        </table>
+        <script>
+            function formatterDetail(value,row,index) {
+                var str = '';
+                if(row.renshu3 > 0) {
+                    str = '<a href="/mvnbook/questionary_result_s.html?uuid='+row.uuid+'" target="_blank" class="easyui-linkbutton">详情</a>';
+                }
+                return str;
+            }
+        </script>
+        <div id="appdetail_tb_edit" style="padding:1px; height:auto;">
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="editappdetail(3)">结束评价</a>
+            <!--<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="saveappdetail()">导出</a>-->
+        </div>
+    </div>
+</div>
+<script src="appraise/appdetail.js" type="text/javascript"></script>

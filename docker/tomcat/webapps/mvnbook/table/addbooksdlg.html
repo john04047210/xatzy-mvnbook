@@ -1,0 +1,22 @@
+<div style="margin:5px 0 5px 10px;">
+    <form id="addbooksdlg" class="easyui-form" data-options="novalidate:true" style="margin:2px 0 1px 7px;">
+        <div style="margin:0;">
+            <span style="margin:0 5px 0 0;">ISBN号</span><input type="text" class="easyui-textbox easyui-validatebox" id="ISBN" style="width:200px;" data-options="prompt:'输入ISBN号',required:true,validType:'length[1,13]'" />
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin-right:5px;">书名</span><input type="text" class="easyui-textbox easyui-validatebox" id="BookTitle" style="width:200px;" data-options="prompt:'输入书名',required:true,validType:'length[1,128]'" />
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin-right:5px;">作者</span><input type="text" class="easyui-textbox easyui-validatebox" id="BookAuthor" style="width:200px;" data-options="prompt:'输入作者',required:true,validType:'length[1,128]'" />
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin-right:5px;">版本</span><input type="text" class="easyui-combobox easyui-validatebox" id="PubVersion" style="width:200px;" data-options="valueField:'code',textField:'value',url:'async/table/pubversion.cc',method:'get',prompt:'选择版本',required:false,editable:true" />
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin-right:5px;">出版社</span><input type="text" class="easyui-combobox easyui-validatebox" id="PubHouse" style="width:200px;" data-options="valueField:'code',textField:'value',url:'async/table/pubhouse.cc',method:'get',prompt:'选择出版社',required:false,editable:true" />
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin:0 5px 0 0;">单价</span><input type="text" class="easyui-numberbox easyui-validatebox" id="Price"  style="width:102px;" data-options="prompt:'输入单价',required:true,min:1,max:4,precision:2" />
+        </div>
+    </form>
+</div>

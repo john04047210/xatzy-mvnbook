@@ -1,0 +1,13 @@
+<div style="margin:5px 0 5px 10px;">
+    <form id="addclassdlg" class="easyui-form" data-options="novalidate:true" style="margin:2px 0 1px 7px;">
+        <div style="margin:0;">
+            <span style="margin:0 5px 0 0;">班级编号</span><input type="text" class="easyui-textbox easyui-validatebox" id="class_code" style="width:160px;" data-options="prompt:'输入班级编号',required:true,validType:'length[6,6]'" />
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin:0 5px 0 24px;">学年</span><input type="text" class="easyui-combobox easyui-validatebox" id="class_sycode" style="width:160px;" data-options="valueField:'code',textField:'value',url:'async/table/schoolyear.cc',method:'get',prompt:'选择学年',required:false,editable:true" />
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin:0 5px 0 0;">班级名称</span><input type="text" class="easyui-textbox easyui-validatebox" id="class_text" style="width:160px;" data-options="prompt:'输入班级名称',required:true,validType:'length[1,64]'" />
+        </div>
+    </form>
+</div>

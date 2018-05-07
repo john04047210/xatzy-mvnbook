@@ -1,0 +1,59 @@
+<div style="margin:5px 0 5px 10px;">
+    <form id="addAppraiseForm" class="easyui-form" data-options="novalidate:true" style="margin:2px 0 1px 7px;">
+        <div style="margin:0 0 0 12px;display:none;">
+            <span style="margin:0 5px 0 0;">rid</span><input type="text" class="easyui-textbox" id="rid" name="rid" style="width:136px;" />
+        </div>
+        <div style="margin:0 0 0 12px;">
+            <span style="margin:0 5px 0 0;">ISBN号</span><input type="text" class="easyui-textbox easyui-validatebox" id="ISBN" name="ISBN" style="width:200px;" data-options="onClickButton:searchbook,buttonIcon:'icon-search',prompt:'输入ISBN号',required:true,validType:'length[1,13]'" />
+        </div>
+        <div style="margin:4px 0 0 24px;">
+            <span style="margin-right:5px;">书名</span><input type="text" class="easyui-textbox easyui-validatebox" id="BookTitle" name="BookTitle" style="width:200px;" data-options="prompt:'输入书名',required:true,validType:'length[1,128]'" />
+        </div>
+        <div style="margin:4px 0 0 24px;">
+            <span style="margin-right:5px;">作者</span><input type="text" class="easyui-textbox easyui-validatebox" id="BookAuthor" name="BookAuthor" style="width:200px;" data-options="prompt:'输入作者',required:true,validType:'length[1,128]'" />
+        </div>
+        <div style="margin:4px 0 0 24px;">
+            <span style="margin-right:5px;">学期</span><input type="text" class="easyui-combobox easyui-validatebox" id="Term" name="Term" style="width:420px;" data-options="valueField:'code',textField:'value',url:'async/table/terms.cc',method:'get',prompt:'选择学期',required:false,editable:true" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="$('#Term').combobox('reload')"></a>
+        </div>
+        <div style="margin:4px 0 0 36px;">
+            <span style="margin-right:5px;">系</span><input type="text" class="easyui-combobox easyui-validatebox" id="Faculty" name="Faculty" style="width:420px;" data-options="valueField:'code',textField:'value',url:'async/table/faculty.cc',method:'get',prompt:'选择系',required:false,editable:true" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="$('#Faculty').combobox('reload')"></a>
+        </div>
+        <div style="margin:4px 0 0 24px;">
+            <span style="margin-right:5px;">专业</span><input type="text" class="easyui-combobox easyui-validatebox" id="SpecField" name="SpecField" style="width:420px;" data-options="valueField:'code',textField:'value',prompt:'选择专业',required:false,editable:true" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="$('#SpecField').combobox('reload')"></a>
+        </div>
+        <div style="margin:4px 0 0 24px;">
+            <span style="margin-right:5px;">班级</span><input type="text" class="easyui-combobox easyui-validatebox" id="SchoolYear" name="SchoolYear" style="width:90px;" data-options="valueField:'code',textField:'value',url:'async/table/schoolyear.cc',method:'get',prompt:'选择学年',required:false,editable:true" />
+            <input type="text" class="easyui-combobox easyui-validatebox" id="Class" name="Class" style="width:325px;" data-options="valueField:'code',textField:'value',prompt:'选择班级',required:false,editable:true" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="$('#Class').combobox('reload')"></a>
+        </div>
+        <div style="margin:4px 0 0 24px;">
+            <span style="margin-right:5px;">课程</span><input type="text" class="easyui-combobox easyui-validatebox" id="Lesson" name="Lesson" style="width:420px;" data-options="valueField:'code',textField:'value',url:'async/table/lesson.cc',method:'get',prompt:'选择课程',required:false,editable:true" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="$('#Lesson').combobox('reload')"></a>
+        </div>
+        <div style="margin:4px 0 0 24px;">
+            <span style="margin-right:5px;">单位</span><input type="text" class="easyui-combobox easyui-validatebox" id="Department" name="Department" style="width:200px;" data-options="valueField:'code',textField:'value',url:'async/table/department.cc',method:'get',prompt:'选择单位',required:false,editable:true" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="$('#Department').combobox('reload')"></a>
+        </div>
+        <div style="margin:4px 0 0 24px;">
+            <span style="margin-right:5px;">教师</span><input type="text" class="easyui-combobox easyui-validatebox" id="Teacher" name="Teacher" style="width:420px;" data-options="valueField:'code',textField:'value',prompt:'选择教师',required:false,editable:true" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="$('#Teacher').combobox('reload')"></a>
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin-right:5px;">教师推荐</span><input type="text" class="easyui-combobox easyui-validatebox" id="TRecommend" name="TRecommend" style="width:420px;" data-options="valueField:'code',textField:'value',url:'async/table/recommend.cc',method:'get',prompt:'选择推荐意见',required:false,editable:false" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="$('#TRecommend').combobox('reload')"></a>
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin-right:5px;">教师评价</span><input type="text" class="easyui-textbox easyui-validatebox" id="Tcomments" name="Tcomments" style="width:420px;height:100px;" data-options="prompt:'输入评价内容',multiline:true,required:true,validType:'length[1,128]'" />
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin-right:5px;">班级推荐</span><input type="text" class="easyui-combobox easyui-validatebox" id="SRecommend" name="SRecommend" style="width:420px;" data-options="valueField:'code',textField:'value',url:'async/table/recommend.cc',method:'get',prompt:'选择推荐意见',required:false,editable:false" />
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" onclick="$('#SRecommend').combobox('reload')"></a>
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin-right:5px;">班级评价</span><input type="text" class="easyui-textbox easyui-validatebox" id="Scomments" name="Scomments" style="width:420px;height:100px;" data-options="prompt:'输入评价内容',multiline:true,required:true,validType:'length[1,128]'" />
+        </div>
+    </form>
+</div>

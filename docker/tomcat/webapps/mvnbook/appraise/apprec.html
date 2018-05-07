@@ -1,0 +1,61 @@
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',split:false,border:false" style="margin:2px 0 2px 3px;overflow:hidden;">
+        <div id="apprec_tb_searcher" class="easyui-panel" data-options="border:false">
+            <form id="apprecSearcherForm" class="easyui-form" data-options="novalidate:true" style="margin:2px;">
+                <div style="margin:0;">
+                    <span style="margin:0 5px 0 0;">承担单位</span><input type="text" class="easyui-combobox easyui-validatebox" id="apprec_dep" style="width:136px;" data-options="valueField:'code',textField:'value',url:'async/table/department.cc',method:'get',prompt:'默认[全院]',required:false,editable:true" />
+                    <span style="margin-right:5px;">学期</span><input type="text" class="easyui-combobox easyui-validatebox" id="apprec_term" style="width:136px;" data-options="valueField:'code',textField:'value',url:'async/table/terms.cc',method:'get',prompt:'选择学期',required:false,editable:true" />
+                    <span style="margin-right:5px;">教师推荐</span><input type="text" class="easyui-combobox easyui-validatebox" id="apprec_tr" style="width:136px;" data-options="valueField:'code',textField:'value',url:'async/table/recommend.cc',method:'get',prompt:'选择',required:false,editable:true" />
+                    <span style="margin-right:5px;">班级推荐</span><input type="text" class="easyui-combobox easyui-validatebox" id="apprec_sr" style="width:136px;" data-options="valueField:'code',textField:'value',url:'async/table/recommend.cc',method:'get',prompt:'选择',required:false,editable:true" />
+                    <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true" onclick="searchapprec()">查询</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
+        <table id="apprec_dg" class="easyui-datagrid" style="height:570px;" data-options="
+                rownumbers:true,
+                singleSelect:true,
+                autoRowHeight:false,
+                fitColumns:true,
+                resizeHandle:'right',
+                striped:true,
+                nowrap:true,
+                fit:true,
+                loadMsg:'数据加载中...',
+                toolbar:'#apprec_tb_edit'">
+            <thead>
+            <tr>
+                <th data-options="field:'rid',hidden:true,width:100,fixed:true,align:'left'">rid</th>
+                <th data-options="field:'ISBN',width:100,fixed:true,align:'left'">ISBN</th>
+                <th data-options="field:'BookTitle',width:100,fixed:false,align:'right'">书名</th>
+                <th data-options="field:'BookAuthor',width:100,fixed:false,align:'right'">作者</th>
+                <th data-options="field:'DepartmentCD',hidden:true,width:120,fixed:true,align:'right'">承担单位CD</th>
+                <th data-options="field:'DepartmentTX',width:120,fixed:true,align:'right'">承担单位</th>
+                <th data-options="field:'FacultyCD',hidden:true,width:100,fixed:false,align:'right'">系CD</th>
+                <th data-options="field:'FacultyTX',width:100,fixed:false,align:'right'">系</th>
+                <th data-options="field:'SpecializedFieldCD',hidden:true,width:100,fixed:false,align:'right'">专业CD</th>
+                <th data-options="field:'SpecializedFieldTX',width:100,fixed:false,align:'right'">专业</th>
+                <th data-options="field:'ClassCD',hidden:true,width:100,fixed:false,align:'right'">班级CD</th>
+                <th data-options="field:'ClassTX',width:100,fixed:false,align:'right'">班级</th>
+                <th data-options="field:'LessonCD',hidden:true,width:100,fixed:false,align:'right'">课程CD</th>
+                <th data-options="field:'LessonTX',width:100,fixed:false,align:'right'">课程</th>
+                <th data-options="field:'TermCD',hidden:true,width:100,fixed:false,align:'right'">学期CD</th>
+                <th data-options="field:'TermTX',width:100,fixed:false,align:'right'">学期</th>
+                <th data-options="field:'TeacherCD',hidden:true,width:100,fixed:false,align:'right'">教师工号</th>
+                <th data-options="field:'TeacherTX',width:100,fixed:false,align:'right'">教师</th>
+                <th data-options="field:'TRecommendCD',hidden:true,width:100,fixed:false,align:'right'">教师推荐CD</th>
+                <th data-options="field:'TRecommendTX',width:100,fixed:false,align:'right'">教师推荐</th>
+                <th data-options="field:'SRecommendCD',hidden:true,width:100,fixed:false,align:'right'">班级推荐CD</th>
+                <th data-options="field:'SRecommendTX',width:100,fixed:false,align:'right'">班级推荐</th>
+                <th data-options="field:'Tcomments',width:100,fixed:false,align:'right'">教师评价</th>
+                <th data-options="field:'Scomments',width:100,fixed:false,align:'right'">班级评价</th>
+            </tr>
+            </thead>
+        </table>
+        <div id="apprec_tb_edit" style="padding:1px; height:auto;">
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="saveapprec()">导出</a>
+        </div>
+    </div>
+</div>
+<script src="res/js/apprec.js" type="text/javascript"></script>

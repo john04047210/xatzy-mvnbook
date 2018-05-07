@@ -1,0 +1,41 @@
+<div style="margin:5px 0 5px 10px;">
+    <form id="addnavigatedlg" class="easyui-form" data-options="novalidate:true" style="margin:2px 0 1px 7px;">
+        <div style="margin:0;">
+            <span style="margin:0 5px 0 0;">节点id</span><input type="text" class="easyui-textbox easyui-validatebox" id="treeid" style="width:136px;" data-options="prompt:'必须项',required:true" />
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin:0 5px 0 0;">层级</span><select class="easyui-combobox easyui-validatebox" id="attr_level" style="width:102px;" data-options="prompt:'必须项',required:false" >
+            <option value=1>第一级</option><option value=2>第二级</option>
+        </select>
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin-right:5px;">名称</span><input type="text" class="easyui-textbox easyui-validatebox" id="text" style="width:420px;" data-options="prompt:'必须项',required:true" />
+        </div>
+        <div style="margin:4px 0 0 12px;display:none;">
+            <span style="margin-right:5px;">打开</span><input type="text" class="easyui-textbox easyui-validatebox" id="state" style="width:300px;" data-options="prompt:'必须项',required:false" />
+        </div>
+        <div style="margin:4px 0 0 12px;display:none;">
+            <span style="margin-right:5px;">选中</span><input type="text" class="easyui-textbox easyui-validatebox" id="checked" style="width:136px;" data-options="prompt:'必须项',required:false" />
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin-right:5px;">图标</span><input type="text" class="easyui-textbox easyui-validatebox" id="iconCls" style="width:420px;" data-options="required:false" />
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin-right:5px;">叶节点</span><select class="easyui-combobox easyui-validatebox" id="attr_isleaf" style="width:300px;" data-options="prompt:'必须项[0:枝节点1:叶节点]',required:false" >
+            <option value=0>枝节点</option><option value=1>叶节点</option>
+        </select>
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin-right:5px;">父节点</span><input type="text" class="easyui-textbox easyui-validatebox" id="attr_parents" style="width:300px;" data-options="prompt:'必须项',required:true" />
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin-right:5px;">链接</span><input type="text" class="easyui-textbox easyui-validatebox" id="attr_url" style="width:300px;" data-options="required:false" />
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin-right:5px;">权限</span><input type="text" class="easyui-combobox easyui-validatebox" id="userpower" style="width:420px;" data-options="valueField:'code',textField:'value',url:'async/nav/roles.cc',method:'get',prompt:'必须项',required:false" />
+        </div>
+        <div style="margin:4px 0 0 12px;">
+            <span style="margin-right:5px;">隐藏</span><input type="text" class="easyui-textbox easyui-validatebox" id="isshow" style="width:300px;" data-options="prompt:'1:显示 0:隐藏',required:false" />
+        </div>
+    </form>
+</div>

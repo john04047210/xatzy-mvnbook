@@ -1,0 +1,40 @@
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',split:false,border:false" style="margin:2px 0 2px 3px;overflow:hidden;">
+        <div id="lesson_tb_searcher" class="easyui-panel" data-options="border:false">
+            <form id="lessonSearcherForm" class="easyui-form" data-options="novalidate:true" style="margin:2px;">
+                <input id="lessonSearcher" class="easyui-searchbox easyui-validatebox" style="width:300px"
+                       data-options="searcher:searchlesson,prompt:'Please Input Value',menu:'#lessonSearcher_mm',required:false" />
+                <div id="lessonSearcher_mm" style="width:120px">
+                    <div data-options="name:'lesson_code',iconCls:'icon-ok'">课程编号</div>
+                    <div data-options="name:'lesson_text',iconCls:'icon-ok'">课程名称</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
+        <table id="lesson_dg" class="easyui-datagrid" style="height:570px;" data-options="
+                rownumbers:true,
+                singleSelect:true,
+                autoRowHeight:false,
+                fitColumns:true,
+                resizeHandle:'right',
+                striped:true,
+                nowrap:true,
+                fit:true,
+                loadMsg:'数据加载中...',
+                toolbar:'#lesson_tb_edit'">
+            <thead>
+            <tr>
+                <th data-options="field:'code',width:100,fixed:true,align:'right'">课程编号</th>
+                <th data-options="field:'value',width:120,fixed:false,align:'left'">课程名称</th>
+            </tr>
+            </thead>
+        </table>
+        <div id="lesson_tb_edit" style="padding:1px; height:auto;">
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="editlesson(2)">新增</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" onclick="editlesson(1)">更新</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="editlesson(0)">删除</a>
+        </div>
+    </div>
+</div>
+<script src="res/js/lesson.js" type="text/javascript"></script>

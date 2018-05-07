@@ -1,0 +1,13 @@
+<div style="margin:5px 0 5px 10px;">
+    <form id="addspecfielddlg" class="easyui-form" data-options="novalidate:true" style="margin:2px 0 1px 7px;">
+        <div style="margin-top:4px;">
+            <span style="margin:0 5px 0 12px;">系名称</span><input type="text" class="easyui-combobox easyui-validatebox" id="specfield_fcode" style="width:136px;" data-options="valueField:'code',textField:'value',url:'async/table/faculty.cc',method:'get',prompt:'选择系',required:false,editable:true" />
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin:0 5px 0 0;">专业编号</span><input type="text" class="easyui-textbox easyui-validatebox" id="specfield_code" style="width:136px;" data-options="prompt:'输入专业编号',required:true,validType:'length[5,5]'" />
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin-right:5px;">专业名称</span><input type="text" class="easyui-textbox easyui-validatebox" id="specfield_text" style="width:420px;" data-options="prompt:'输入专业名称',required:true,validType:'length[1,28]'" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+<div style="margin:5px 0 5px 10px;">
+    <form id="addaccountdlg" class="easyui-form" data-options="novalidate:true" style="margin:2px 0 1px 7px;">
+        <div style="margin:0;display:none;">
+            <span style="margin:0 5px 0 0;">uid</span><input type="text" class="easyui-textbox easyui-validatebox" id="uid" style="width:136px;" data-options="required:false" />
+        </div>
+        <div style="margin:4px 0 0 0;">
+            <span style="margin-right:5px;">帐号</span><input type="text" class="easyui-textbox easyui-validatebox" id="phone" style="width:420px;" data-options="prompt:'必须项',required:true" />
+        </div>
+        <div style="margin:4px 0 0 0;">
+            <span style="margin-right:5px;">密码</span><input type="text" class="easyui-textbox easyui-validatebox" id="pwd" style="width:300px;" data-options="prompt:'必须项',required:true" />
+        </div>
+        <!--<div style="margin:4px 0 0 0;display:none;">
+            <span style="margin-right:5px;">新密码</span><input type="text" class="easyui-textbox easyui-validatebox" id="newpwd" style="width:300px;" data-options="prompt:'必须项',required:false" />
+        </div>
+        <div style="margin:4px 0 0 0;display:none;">
+            <span style="margin-right:5px;">新密码</span><input type="text" class="easyui-textbox easyui-validatebox" id="newpwd1" style="width:300px;" data-options="prompt:'请再次输入新密码',required:false" />
+        </div>-->
+        <div style="margin:4px 0 0 0;">
+            <span style="margin-right:5px;">昵称</span><input type="text" class="easyui-textbox easyui-validatebox" id="nickname" style="width:136px;" data-options="required:false" />
+        </div>
+        <div style="margin-top:4px;">
+            <span style="margin-right:5px;">权限</span><input type="text" class="easyui-combobox easyui-validatebox" id="userpower" style="width:420px;" data-options="valueField:'code',textField:'value',url:'async/nav/roles.cc',method:'get',prompt:'必须项',required:false" />
+        </div>
+    </form>
+</div>

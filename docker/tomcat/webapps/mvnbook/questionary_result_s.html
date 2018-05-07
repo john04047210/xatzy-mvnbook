@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>教材评价详情(学生)</title>
+    <!-- Bootstrap Styles-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css" rel="stylesheet">-->
+    <!-- jQuery Select Sytles -->
+    <link href="jquerySelect/css/bootstrap-select.min.css" rel="stylesheet"/>
+    <style>
+        .table-bordered {
+            border: 2px solid #ddd;
+        }
+        .table-center {
+            text-align:center;
+            align:center;
+            vertical-align: middle !important;
+        }
+        .table-break {
+            word-wrap:break-word;
+        }
+        .table-backimg-paper {
+            background-image: url(res/themes/images/paper.gif);
+            background-position: left top;
+            background-repeat: repeat;
+            #padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <table class="table table-bordered table-hover table-center table-break">
+        <caption class="table-center">
+            <div><h2>西安铁路职业技术学院</h2></div>
+            <div id="table_term">2016-2017-01学期</div>
+            <div><h5>教材使用适用性调查结果(学生)</h5></div>
+        </caption>
+        <thead>
+        <tr>
+            <th colspan=8>
+                <p style="text-indent:30px;">为促进我校教材管理工作，及时了解同学们对所使用教材的意见和建议，请您对本学期所用的教材进行客观、公正的评价。您的评价对提高学校教学质量和维护您自身的权益都将起到重要作用。请您把教材使用情况按下列指标进行评价。谢谢！</p>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="table-center" width="100px" rowspan=2>课程名称</td>
+            <td class="table-center" rowspan=2><div id="kecheng">机电一体化315110</div></td>
+            <td class="table-center" width="100px" rowspan=2>授课教师</td>
+            <td class="table-center" rowspan=2><div id="name">赵飞燕</div></td>
+            <td width="160px">所在系</td>
+            <td colspan=3><div id="class">电气工程系</div></td>
+        </tr>
+        <tr>
+            <td>专业、班级</td>
+            <td colspan=3><div id="glass">电气化铁道1402</div></td>
+        </tr>
+        <tr>
+            <td>教材名称</td>
+            <td><div id="book_title"></div></td>
+            <td class="table-center" rowspan=2>出 版 社</td>
+            <td class="table-center" rowspan=2><div id="book_publish"></div></td>
+            <td class="table-center" rowspan=2>作    者</td>
+            <td class="table-center" rowspan=2 colspan=3><div id="book_author"></div></td>
+        </tr>
+        <tr>
+            <td>ISBN号</td>
+            <td><div id="book_isbn"></div></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=2>项    目</td>
+            <td colspan=4>评价指标</td>
+            <td width="50px">好</td>
+            <td width="50px">一般</td>
+            <td width="50px">差</td>
+        </tr>
+        <tr>
+            <td colspan=4>分数</td>
+            <td width="50px">10分</td>
+            <td width="50px">8分</td>
+            <td width="50px">6分</td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=10>内容质量</td>
+            <td colspan=4 align="left">内容精练、难度适中、层次分明、条理清晰</td>
+            <td><span id="SQ-1-1-1-10">0%</span></td>
+            <td><span id="SQ-1-1-1-8">0%</span></td>
+            <td><span id="SQ-1-1-1-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">章节学习目标明确、重点难点突出</td>
+            <td><span id="SQ-1-1-2-10">0%</span></td>
+            <td><span id="SQ-1-1-2-8">0%</span></td>
+            <td><span id="SQ-1-1-2-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">内容与老师讲课内容相符一致，结课后能学习几乎全部章节内容</td>
+            <td><span id="SQ-1-1-3-10">0%</span></td>
+            <td><span id="SQ-1-1-3-8">0%</span></td>
+            <td><span id="SQ-1-1-3-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">与先行相关课程所用教材内容重复较少</td>
+            <td><span id="SQ-1-1-4-10">0%</span></td>
+            <td><span id="SQ-1-1-4-8">0%</span></td>
+            <td><span id="SQ-1-1-4-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">实用性强，学习后获得了新技能，利于能力的培养，能够激发学习兴趣</td>
+            <td><span id="SQ-1-1-5-10">0%</span></td>
+            <td><span id="SQ-1-1-5-8">0%</span></td>
+            <td><span id="SQ-1-1-5-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">案例搭配适宜</td>
+            <td><span id="SQ-1-1-6-10">0%</span></td>
+            <td><span id="SQ-1-1-6-8">0%</span></td>
+            <td><span id="SQ-1-1-6-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">文图搭配适当</td>
+            <td><span id="SQ-1-1-7-10">0%</span></td>
+            <td><span id="SQ-1-1-7-8">0%</span></td>
+            <td><span id="SQ-1-1-7-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">习题、思考题齐全</td>
+            <td><span id="SQ-1-1-8-10">0%</span></td>
+            <td><span id="SQ-1-1-8-8">0%</span></td>
+            <td><span id="SQ-1-1-8-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">文字、标点、符号、公式、数据、计题单位标准规范</td>
+            <td><span id="SQ-1-1-9-10">0%</span></td>
+            <td><span id="SQ-1-1-9-8">0%</span></td>
+            <td><span id="SQ-1-1-9-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">价格适中</td>
+            <td><span id="SQ-1-1-10-10">0%</span></td>
+            <td><span id="SQ-1-1-10-8">0%</span></td>
+            <td><span id="SQ-1-1-10-6">0%</span></td>
+        </tr>
+        <tr>
+            <td><strong>综合评议</strong></td>
+            <td colspan=4><strong>以上10项总计得分</strong></td>
+            <td colspan=3><div id="S_total"></div></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan="2">印刷质量</td>
+            <td colspan=4 align="left">无缺页、白页、颠倒页，装订平整</td>
+            <td><span id="SQ-2-1-1-10">0%</span></td>
+            <td><span id="SQ-2-1-1-8">0%</span></td>
+            <td><span id="SQ-2-1-1-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">字迹清楚，纸张良好</td>
+            <td><span id="SQ-2-1-2-10">0%</span></td>
+            <td><span id="SQ-2-1-2-8">0%</span></td>
+            <td><span id="SQ-2-1-2-6">0%</span></td>
+        </tr>
+        <tr>
+            <td colspan=8 align="left">
+                <div style="float:left;width:200px;">是否属于高职高专教材：</div>
+                <div style="float:left;margin-left:70px;"><label for="SQ-3-1-1-1">是：</label><span id="SQ-3-1-1-1">0%</span></div>
+                <div style="float:left;margin-left:50px;"><label for="SQ-3-1-1-0">否：</label><span id="SQ-3-1-1-0">0%</span></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=8 align="left">
+                <div style="float:left;width:200px;">您对于该本教材的推荐意见：</div>
+                <div style="float:left;margin-left:70px;"><label for="SQ-3-1-2-10">推荐使用：</label><span id="SQ-3-1-2-10">0%</span></div>
+                <div style="float:left;margin-left:50px;"><label for="SQ-3-1-2-8">勉强使用：</label><span id="SQ-3-1-2-8">0%</span></div>
+                <div style="float:left;margin-left:50px;"><label for="SQ-3-1-2-6">不推荐使用：</label><span id="SQ-3-1-2-6">0%</span></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=8 align="left">
+                <div>您对本专业所使用教材的其他评价与建议：</div>
+                <div style="margin-top:10px;"><textarea id="S_commond" class="form-control" style="width:100%;" maxlength="2000" rows="10"></textarea></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="uuid" style="display:none"></div>
+    <div id="xuehao" style="display:none"></div>
+    <div><button type="button" id="btnClose" class="btn btn-primary btn-lg">关闭</button></div>
+</div>
+
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Bootstrap Js -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.js"></script>-->
+
+<!-- jQuery Select Js -->
+<script src="jquerySelect/bootstrap-select.min.js"></script>
+<script src="res/js/constant.js"></script>
+
+<script>
+    var pro = com.global.project;
+    var str = '';
+    var kechengSize = 0;
+    $(function(){
+        $('#btnClose').click(function(){
+            window.opener=null;window.open('','_self');window.close();
+        });
+        getrs1detail();
+    });
+
+    function init(detail) {
+        $('#uuid').text(detail.uuid);
+        $('#table_term').text(detail.term);
+        $('#kecheng').text(detail.kecheng);
+        $('#name').text(detail.jiaoshi);
+        $('#class').text(detail.yuanxi);
+        $('#glass').text(detail.banji);
+        $('#book_title').text(detail.jiaocai);
+        $('#book_publish').text(detail.banbie);
+        $('#book_author').text(detail.zuozhe);
+        $('#book_isbn').text(detail.isbn);
+        $('#S_commond').val(detail.Scomments);
+        $('#SQ-1-1-1-10').text(Percentage(detail.Q1_1_10, detail.renshu2));
+        $('#SQ-1-1-1-8').text(Percentage(detail.Q1_1_8, detail.renshu2));
+        $('#SQ-1-1-1-6').text(Percentage(detail.Q1_1_6, detail.renshu2));
+        $('#SQ-1-1-2-10').text(Percentage(detail.Q1_2_10, detail.renshu2));
+        $('#SQ-1-1-2-8').text(Percentage(detail.Q1_2_8, detail.renshu2));
+        $('#SQ-1-1-2-6').text(Percentage(detail.Q1_2_6, detail.renshu2));
+        $('#SQ-1-1-3-10').text(Percentage(detail.Q1_3_10, detail.renshu2));
+        $('#SQ-1-1-3-8').text(Percentage(detail.Q1_3_8, detail.renshu2));
+        $('#SQ-1-1-3-6').text(Percentage(detail.Q1_3_6, detail.renshu2));
+        $('#SQ-1-1-4-10').text(Percentage(detail.Q1_4_10, detail.renshu2));
+        $('#SQ-1-1-4-8').text(Percentage(detail.Q1_4_8, detail.renshu2));
+        $('#SQ-1-1-4-6').text(Percentage(detail.Q1_4_6, detail.renshu2));
+        $('#SQ-1-1-5-10').text(Percentage(detail.Q1_5_10, detail.renshu2));
+        $('#SQ-1-1-5-8').text(Percentage(detail.Q1_5_8, detail.renshu2));
+        $('#SQ-1-1-5-6').text(Percentage(detail.Q1_5_6, detail.renshu2));
+        $('#SQ-1-1-6-10').text(Percentage(detail.Q1_6_10, detail.renshu2));
+        $('#SQ-1-1-6-8').text(Percentage(detail.Q1_6_8, detail.renshu2));
+        $('#SQ-1-1-6-6').text(Percentage(detail.Q1_6_6, detail.renshu2));
+        $('#SQ-1-1-7-10').text(Percentage(detail.Q1_7_10, detail.renshu2));
+        $('#SQ-1-1-7-8').text(Percentage(detail.Q1_7_8, detail.renshu2));
+        $('#SQ-1-1-7-6').text(Percentage(detail.Q1_7_6, detail.renshu2));
+        $('#SQ-1-1-8-10').text(Percentage(detail.Q1_8_10, detail.renshu2));
+        $('#SQ-1-1-8-8').text(Percentage(detail.Q1_8_8, detail.renshu2));
+        $('#SQ-1-1-8-6').text(Percentage(detail.Q1_8_6, detail.renshu2));
+        $('#SQ-1-1-9-10').text(Percentage(detail.Q1_9_10, detail.renshu2));
+        $('#SQ-1-1-9-8').text(Percentage(detail.Q1_9_8, detail.renshu2));
+        $('#SQ-1-1-9-6').text(Percentage(detail.Q1_9_6, detail.renshu2));
+        $('#SQ-1-1-10-10').text(Percentage(detail.Q1_10_10, detail.renshu2));
+        $('#SQ-1-1-10-8').text(Percentage(detail.Q1_10_8, detail.renshu2));
+        $('#SQ-1-1-10-6').text(Percentage(detail.Q1_10_6, detail.renshu2));
+        $('#SQ-2-1-1-10').text(Percentage(detail.Q2_1_10, detail.renshu2));
+        $('#SQ-2-1-1-8').text(Percentage(detail.Q2_1_8, detail.renshu2));
+        $('#SQ-2-1-1-6').text(Percentage(detail.Q2_1_6, detail.renshu2));
+        $('#SQ-2-1-2-10').text(Percentage(detail.Q2_2_10, detail.renshu2));
+        $('#SQ-2-1-2-8').text(Percentage(detail.Q2_2_8, detail.renshu2));
+        $('#SQ-2-1-2-6').text(Percentage(detail.Q2_2_6, detail.renshu2));
+        $('#SQ-3-1-1-1').text(Percentage(detail.Q3_1_1, detail.renshu2));
+        $('#SQ-3-1-1-0').text(Percentage(detail.Q3_1_0, detail.renshu2));
+        $('#SQ-3-1-2-10').text(Percentage(detail.Q3_2_10, detail.renshu2));
+        $('#SQ-3-1-2-8').text(Percentage(detail.Q3_2_8, detail.renshu2));
+        $('#SQ-3-1-2-6>').text(Percentage(detail.Q3_2_6, detail.renshu2));
+    }
+
+    function Percentage(num, total) {
+        return (Math.round(num / total * 10000) / 100.00 + "%");// 小数点后两位百分比
+    }
+
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]); return '';
+    }
+
+    function isEmpty( str ){
+        if ( str == "" ) return true;
+        var regu = "^[ ]+$";
+        var re = new RegExp(regu);
+        return re.test(str);
+    }
+
+    function getrs1detail() {
+        var msg = '';
+        var uuid = getUrlParam('uuid');
+        if(isEmpty(uuid)) {
+            alert('非法访问');
+            window.opener=null;window.open('','_self');window.close();
+        }
+        var param = {"uuid":uuid};
+        $.post('async/diaocha/getrs1detail.cc',param,function(resp,status){
+            if(200 == resp.code) {
+                init(resp.data);
+            } else if(401 == resp.code) {
+                alert('登陆失效，请重新登陆');
+            } else {
+                alert('resp.msg');
+            }
+        });
+        return;
+    }
+</script>
+</body>
+</html>

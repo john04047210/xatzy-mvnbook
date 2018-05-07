@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
+         metadata-complete="true">
+
+    <!-- 账户后台管理配置信息 -->
+    <servlet>
+        <servlet-name>mvnbook/ssmp</servlet-name>
+        <servlet-class>com.qiku.qiaopeng.mvnbook.servlet.MvnbookServlet</servlet-class>
+        <async-supported>true</async-supported>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>mvnbook/ssmp</servlet-name>
+        <!-- 管理系统登录 -->
+        <url-pattern>/async/ssmp/login.cc</url-pattern>
+        <!-- 管理系统退出 -->
+        <url-pattern>/async/ssmp/loginout.cc</url-pattern>
+        <!-- 校验登录状态 -->
+        <url-pattern>/async/ssmp/checklogin.cc</url-pattern>
+        <!-- 获取导航栏 -->
+        <url-pattern>/async/nav/navigate.cc</url-pattern>
+
+        <!-- 获取导航栏 -->
+        <url-pattern>/async/nav/getnavigate.cc</url-pattern>
+        <!-- 新增导航栏 -->
+        <url-pattern>/async/nav/addnavigate.cc</url-pattern>
+        <!-- 变更导航栏 -->
+        <url-pattern>/async/nav/uptnavigate.cc</url-pattern>
+        <!-- 删除导航栏 -->
+        <url-pattern>/async/nav/delnavigate.cc</url-pattern>
+
+        <!-- 获取帐号 -->
+        <url-pattern>/async/nav/getaccount.cc</url-pattern>
+        <!-- 新增帐号 -->
+        <url-pattern>/async/nav/addaccount.cc</url-pattern>
+        <!-- 变更帐号 -->
+        <url-pattern>/async/nav/uptaccount.cc</url-pattern>
+        <!-- 删除帐号 -->
+        <url-pattern>/async/nav/delaccount.cc</url-pattern>
+
+        <!-- 获取角色(combobox) -->
+        <url-pattern>/async/nav/roles.cc</url-pattern>
+        <!-- 获取角色 -->
+        <url-pattern>/async/nav/getroles.cc</url-pattern>
+        <!-- 新增角色 -->
+        <url-pattern>/async/nav/addroles.cc</url-pattern>
+        <!-- 变更角色 -->
+        <url-pattern>/async/nav/uptroles.cc</url-pattern>
+        <!-- 删除角色 -->
+        <url-pattern>/async/nav/delroles.cc</url-pattern>
+
+        <!-- 获取评价库信息(推荐意见) -->
+        <url-pattern>/async/appraise/getapprec.cc</url-pattern>
+
+        <!-- 获取评价库信息 -->
+        <url-pattern>/async/table/getappraise.cc</url-pattern>
+        <!-- 新增评价库信息 -->
+        <url-pattern>/async/table/addappraise.cc</url-pattern>
+        <!-- 变更评价库信息 -->
+        <url-pattern>/async/table/uptappraise.cc</url-pattern>
+        <!-- 删除评价库信息 -->
+        <url-pattern>/async/table/delappraise.cc</url-pattern>
+
+        <!-- 获取书籍库信息 -->
+        <url-pattern>/async/table/getbooks.cc</url-pattern>
+        <!-- 新增书籍库信息 -->
+        <url-pattern>/async/table/addbooks.cc</url-pattern>
+        <!-- 变更书籍库信息 -->
+        <url-pattern>/async/table/uptbooks.cc</url-pattern>
+        <!-- 删除书籍库信息 -->
+        <url-pattern>/async/table/delbooks.cc</url-pattern>
+
+        <!-- 获取版本库信息(combobox) -->
+        <url-pattern>/async/table/pubversion.cc</url-pattern>
+        <!-- 获取版本库信息 -->
+        <url-pattern>/async/table/getpubversion.cc</url-pattern>
+        <!-- 新增版本库信息 -->
+        <url-pattern>/async/table/addpubversion.cc</url-pattern>
+        <!-- 变更版本库信息 -->
+        <url-pattern>/async/table/uptpubversion.cc</url-pattern>
+        <!-- 删除版本库信息 -->
+        <url-pattern>/async/table/delpubversion.cc</url-pattern>
+
+        <!-- 获取出版社库信息(combobox) -->
+        <url-pattern>/async/table/pubhouse.cc</url-pattern>
+        <!-- 获取出版社库信息 -->
+        <url-pattern>/async/table/getpubhouse.cc</url-pattern>
+        <!-- 获取出版社库CD信息 -->
+        <url-pattern>/async/table/getpubhousecd_next.cc</url-pattern>
+        <!-- 新增出版社库信息 -->
+        <url-pattern>/async/table/addpubhouse.cc</url-pattern>
+        <!-- 变更出版社库信息 -->
+        <url-pattern>/async/table/uptpubhouse.cc</url-pattern>
+        <!-- 删除出版社库信息 -->
+        <url-pattern>/async/table/delpubhouse.cc</url-pattern>
+
+        <!-- 获取评价类别库信息(combobox) -->
+        <url-pattern>/async/table/recommend.cc</url-pattern>
+        <!-- 获取评价类别库信息 -->
+        <url-pattern>/async/table/getrecommend.cc</url-pattern>
+        <!-- 新增评价类别库信息 -->
+        <url-pattern>/async/table/addrecommend.cc</url-pattern>
+        <!-- 变更评价类别库信息 -->
+        <url-pattern>/async/table/uptrecommend.cc</url-pattern>
+        <!-- 删除评价类别库信息 -->
+        <url-pattern>/async/table/delrecommend.cc</url-pattern>
+
+        <!-- 获取系库信息(combobox) -->
+        <url-pattern>/async/table/faculty.cc</url-pattern>
+        <!-- 获取系库信息 -->
+        <url-pattern>/async/table/getfaculty.cc</url-pattern>
+        <!-- 新增系库信息 -->
+        <url-pattern>/async/table/addfaculty.cc</url-pattern>
+        <!-- 变更系库信息 -->
+        <url-pattern>/async/table/uptfaculty.cc</url-pattern>
+        <!-- 删除系库信息 -->
+        <url-pattern>/async/table/delfaculty.cc</url-pattern>
+
+        <!-- 获取承担单位库信息(combobox) -->
+        <url-pattern>/async/table/department.cc</url-pattern>
+        <!-- 获取承担单位库信息 -->
+        <url-pattern>/async/table/getdepartment.cc</url-pattern>
+        <!-- 新增承担单位库信息 -->
+        <url-pattern>/async/table/adddepartment.cc</url-pattern>
+        <!-- 变更承担单位库信息 -->
+        <url-pattern>/async/table/uptdepartment.cc</url-pattern>
+        <!-- 删除承担单位库信息 -->
+        <url-pattern>/async/table/deldepartment.cc</url-pattern>
+
+        <!-- 获取课程库信息(combobox) -->
+        <url-pattern>/async/table/lesson.cc</url-pattern>
+        <!-- 获取课程库信息 -->
+        <url-pattern>/async/table/getlesson.cc</url-pattern>
+        <!-- 获取课程库CD信息 -->
+        <url-pattern>/async/table/getlessoncd_next.cc</url-pattern>
+        <!-- 新增课程库信息 -->
+        <url-pattern>/async/table/addlesson.cc</url-pattern>
+        <!-- 变更课程库信息 -->
+        <url-pattern>/async/table/uptlesson.cc</url-pattern>
+        <!-- 删除课程库信息 -->
+        <url-pattern>/async/table/dellesson.cc</url-pattern>
+
+        <!-- 获取学年库信息(combobox) -->
+        <url-pattern>/async/table/schoolyear.cc</url-pattern>
+        <!-- 获取学年库信息 -->
+        <url-pattern>/async/table/getschoolyear.cc</url-pattern>
+        <!-- 新增学年库信息 -->
+        <url-pattern>/async/table/addschoolyear.cc</url-pattern>
+        <!-- 变更学年库信息 -->
+        <url-pattern>/async/table/uptschoolyear.cc</url-pattern>
+        <!-- 删除学年库信息 -->
+        <url-pattern>/async/table/delschoolyear.cc</url-pattern>
+
+        <!-- 获取学期库信息(combobox) -->
+        <url-pattern>/async/table/terms.cc</url-pattern>
+        <!-- 获取学期库信息 -->
+        <url-pattern>/async/table/getterms.cc</url-pattern>
+        <!-- 新增学期库信息 -->
+        <url-pattern>/async/table/addterms.cc</url-pattern>
+        <!-- 变更学期库信息 -->
+        <url-pattern>/async/table/uptterms.cc</url-pattern>
+        <!-- 删除学期库信息 -->
+        <url-pattern>/async/table/delterms.cc</url-pattern>
+
+        <!-- 获取专业名称库信息(combobox) -->
+        <url-pattern>/async/table/specfield.cc</url-pattern>
+        <!-- 获取专业名称库信息 -->
+        <url-pattern>/async/table/getspecfield.cc</url-pattern>
+        <!-- 获取专业名称CD信息 -->
+        <url-pattern>/async/table/getspecfieldcd_next.cc</url-pattern>
+        <!-- 新增专业名称库信息 -->
+        <url-pattern>/async/table/addspecfield.cc</url-pattern>
+        <!-- 变更专业名称库信息 -->
+        <url-pattern>/async/table/uptspecfield.cc</url-pattern>
+        <!-- 删除专业名称库信息 -->
+        <url-pattern>/async/table/delspecfield.cc</url-pattern>
+
+        <!-- 获取教研室库信息(combobox) -->
+        <url-pattern>/async/table/staffroom.cc</url-pattern>
+        <!-- 获取教研室库信息 -->
+        <url-pattern>/async/table/getstaffroom.cc</url-pattern>
+        <!-- 获取教研室CD信息 -->
+        <url-pattern>/async/table/getstaffroomcd_next.cc</url-pattern>
+        <!-- 新增教研室库信息 -->
+        <url-pattern>/async/table/addstaffroom.cc</url-pattern>
+        <!-- 变更教研室库信息 -->
+        <url-pattern>/async/table/uptstaffroom.cc</url-pattern>
+        <!-- 删除教研室库信息 -->
+        <url-pattern>/async/table/delstaffroom.cc</url-pattern>
+
+        <!-- 获取教师库信息(combobox) -->
+        <url-pattern>/async/table/teacher.cc</url-pattern>
+        <!-- 获取教师库信息 -->
+        <url-pattern>/async/table/getteacher.cc</url-pattern>
+        <!-- 新增教师库信息 -->
+        <url-pattern>/async/table/addteacher.cc</url-pattern>
+        <!-- 变更教师库信息 -->
+        <url-pattern>/async/table/uptteacher.cc</url-pattern>
+        <!-- 删除教师库信息 -->
+        <url-pattern>/async/table/delteacher.cc</url-pattern>
+
+        <!-- 获取班级库信息(combobox) -->
+        <url-pattern>/async/table/class.cc</url-pattern>
+        <!-- 获取班级库信息 -->
+        <url-pattern>/async/table/getclass.cc</url-pattern>
+        <!-- 新增班级库信息 -->
+        <url-pattern>/async/table/addclass.cc</url-pattern>
+        <!-- 变更班级库信息 -->
+        <url-pattern>/async/table/uptclass.cc</url-pattern>
+        <!-- 删除班级库信息 -->
+        <url-pattern>/async/table/delclass.cc</url-pattern>
+
+        <!-- 文件上传 -->
+        <url-pattern>/async/table/uploadFile.cc</url-pattern>
+        <url-pattern>/async/table/importFile.cc</url-pattern>
+        <url-pattern>/async/table/getdiaocaistudent.cc</url-pattern>
+        <url-pattern>/async/table/getdiaocaiteacher.cc</url-pattern>
+        <url-pattern>/async/table/getstudent.cc</url-pattern>
+        <!-- 不对外提供 -->
+        <url-pattern>/async/table/move.cc</url-pattern>
+
+        <!-- 教师调查数据提交 -->
+        <url-pattern>/async/diaocha/teacher.cc</url-pattern>
+        <!-- 学生调查数据提交 -->
+        <url-pattern>/async/diaocha/student.cc</url-pattern>
+        <!-- 学生教师评价的原始数据 -->
+        <url-pattern>/async/diaocha/getrs1.cc</url-pattern>
+        <!-- 学生教师评价的原始数据详情 -->
+        <url-pattern>/async/diaocha/getrs1detail.cc</url-pattern>
+        <!-- 按照班级教材生成第一阶段统计结果 -->
+        <url-pattern>/async/diaocha/creaters1.cc</url-pattern>
+        <!-- 班级为单位的统计结果 -->
+        <url-pattern>/async/diaocha/getrsglass.cc</url-pattern>
+        <!-- 教材为单位的统计结果 -->
+        <url-pattern>/async/diaocha/getrsjiaocai.cc</url-pattern>
+        <!-- 教师为单位的统计结果 -->
+        <url-pattern>/async/diaocha/getrsjiaoshi.cc</url-pattern>
+    </servlet-mapping>
+
+
+    <session-config>
+        <!-- 单位：分钟 -->
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+</web-app>

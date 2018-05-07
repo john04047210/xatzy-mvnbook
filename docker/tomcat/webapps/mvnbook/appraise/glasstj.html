@@ -1,0 +1,62 @@
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',split:false,border:false" style="margin:2px 0 2px 3px;overflow:hidden;">
+        <div id="glasstj_tb_searcher" class="easyui-panel" data-options="border:false">
+            <form id="glasstjSearcherForm" class="easyui-form" data-options="novalidate:true" style="margin:2px;">
+                <input id="glasstjSearcher" class="easyui-searchbox easyui-validatebox" style="width:300px"
+                       data-options="searcher:searchglasstj,prompt:'Please Input Value',menu:'#glasstjSearcher_mm',required:false" />
+                <div id="glasstjSearcher_mm" style="width:120px">
+                    <div data-options="name:'banji',iconCls:'icon-ok'">班级</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
+        <table id="glasstj_dg" class="easyui-datagrid" style="height:570px;" data-options="
+                rownumbers:true,
+                singleSelect:false,
+                autoRowHeight:false,
+                fitColumns:true,
+                resizeHandle:'right',
+                striped:true,
+                nowrap:true,
+                fit:true,
+                loadMsg:'数据加载中...',
+                toolbar:'#glasstj_tb_edit'">
+            <thead>
+            <tr>
+                <th data-options="field:'uuid',hidden:true,width:100,fixed:true,align:'left'" rowspan="2">uuid</th>
+                <th data-options="field:'yuanxi',width:100,fixed:true,align:'left'" rowspan="2">院(系)/部</th>
+                <th data-options="field:'zhuanye',width:150,fixed:true,align:'left'" rowspan="2">专业</th>
+                <th data-options="field:'banji',width:100,fixed:true,align:'left'" rowspan="2">行政班级</th>
+                <th data-options="field:'renshu',width:70,fixed:true,align:'left'" rowspan="2">班级人数</th>
+                <th data-options="field:'kecheng',width:260,fixed:true,align:'left'" rowspan="2">课程名称</th>
+                <th data-options="field:'isbn',width:100,fixed:true,align:'left'" rowspan="2">ISBN号</th>
+                <th data-options="field:'jiaocai',width:260,fixed:true,align:'left'" rowspan="2">教材名称</th>
+                <th data-options="field:'banbie',width:80,fixed:true,align:'left'" rowspan="2">版别</th>
+                <th data-options="field:'zuozhe',width:80,fixed:true,align:'left'" rowspan="2">作者</th>
+                <th data-options="field:'dingjia',width:50,fixed:true,align:'left'" rowspan="2">定价</th>
+                <th colspan="5">学生评价</th>
+                <th colspan="5">教师评价</th>
+            </tr>
+            <tr>
+                <th data-options="field:'renshu_s',width:70,fixed:true,align:'center'">评议数量</th>
+                <th data-options="field:'Q3_2_s_tj',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_s);return value+'('+per+')';}return value;}">推荐使用</th>
+                <th data-options="field:'Q3_2_s_mq',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_s);return value+'('+per+')';}return value;}">勉强使用</th>
+                <th data-options="field:'Q3_2_s_no',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_s);return value+'('+per+')';}return value;}">不推荐使用</th>
+                <th data-options="field:'Scomments',width:170,fixed:true,align:'center'">评议内容</th>
+                <th data-options="field:'renshu_t',width:70,fixed:true,align:'center'">评议数量</th>
+                <th data-options="field:'Q3_2_t_tj',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_t);return value+'('+per+')';}return value;}">推荐使用</th>
+                <th data-options="field:'Q3_2_t_mq',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_t);return value+'('+per+')';}return value;}">勉强使用</th>
+                <th data-options="field:'Q3_2_t_no',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_t);return value+'('+per+')';}return value;}">不推荐使用</th>
+                <th data-options="field:'Tcomments',width:170,fixed:true,align:'center'">评议内容</th>
+            </tr>
+            </thead>
+        </table>
+        <div id="glasstj_tb_edit" style="padding:1px; height:auto;">
+            <!--<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="saveglasstj(3)">结束评价</a>-->
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="saveglasstj()">导出</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" style="float:right;" data-options="iconCls:'icon-reload',plain:true" onclick="searchglasstjall()">刷新</a>
+        </div>
+    </div>
+</div>
+<script src="appraise/glasstj.js" type="text/javascript"></script>

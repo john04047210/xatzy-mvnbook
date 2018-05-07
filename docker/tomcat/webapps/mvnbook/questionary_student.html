@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>教材评价(学生)</title>
+    <!-- Bootstrap Styles-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css" rel="stylesheet">-->
+    <!-- jQuery Select Sytles -->
+    <link href="jquerySelect/css/bootstrap-select.min.css" rel="stylesheet"/>
+    <style>
+        .table-bordered {
+            border: 2px solid #ddd;
+        }
+        .table-center {
+            text-align:center;
+            align:center;
+            vertical-align: middle !important;
+        }
+        .table-break {
+            word-wrap:break-word;
+        }
+        .table-backimg-paper {
+            background-image: url(res/themes/images/paper.gif);
+            background-position: left top;
+            background-repeat: repeat;
+            #padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="display:none;">
+    <table class="table table-bordered table-hover table-center table-break">
+        <caption class="table-center">
+            <div><h2>西安铁路职业技术学院</h2></div>
+            <div id="table_term">2016-2017-01学期</div>
+            <div><h5>教材使用适用性调查表(学生用)</h5></div>
+        </caption>
+        <thead>
+        <tr>
+            <th colspan=8>
+                <p style="text-indent:30px;">为促进我校教材管理工作，及时了解同学们对所使用教材的意见和建议，请您对本学期所用的教材进行客观、公正的评价。您的评价对提高学校教学质量和维护您自身的权益都将起到重要作用。请您把教材使用情况按下列指标进行评价。谢谢！</p>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="table-center" width="100px" rowspan=2>课程名称</td>
+            <td class="table-center" rowspan=2><div id="kecheng">机电一体化315110</div></td>
+            <td class="table-center" width="100px" rowspan=2>授课教师</td>
+            <td class="table-center" rowspan=2><div id="name">赵飞燕</div></td>
+            <td width="160px">所在系</td>
+            <td colspan=3><div id="class">电气工程系</div></td>
+        </tr>
+        <tr>
+            <td>专业、班级</td>
+            <td colspan=3><div id="glass">电气化铁道1402</div></td>
+        </tr>
+        <tr>
+            <td>教材名称</td>
+            <td><div id="book_title"></div></td>
+            <td class="table-center" rowspan=2>出 版 社</td>
+            <td class="table-center" rowspan=2><div id="book_publish"></div></td>
+            <td class="table-center" rowspan=2>作    者</td>
+            <td class="table-center" rowspan=2 colspan=3><div id="book_author"></div></td>
+        </tr>
+        <tr>
+            <td>ISBN号</td>
+            <td><div id="book_isbn"></div></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=2>项    目</td>
+            <td colspan=4>评价指标</td>
+            <td width="50px">好</td>
+            <td width="50px">一般</td>
+            <td width="50px">差</td>
+        </tr>
+        <tr>
+            <td colspan=4>分数</td>
+            <td width="50px">10分</td>
+            <td width="50px">8分</td>
+            <td width="50px">6分</td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=10>内容质量</td>
+            <td colspan=4 align="left">内容精练、难度适中、层次分明、条理清晰</td>
+            <td><input type="radio" name="SQ-1-1-1" id="SQ-1-1-1-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-1" id="SQ-1-1-1-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-1" id="SQ-1-1-1-6" value="6">
+                <input type="radio" name="SQ-1-1-1" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">章节学习目标明确、重点难点突出</td>
+            <td><input type="radio" name="SQ-1-1-2" id="SQ-1-1-2-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-2" id="SQ-1-1-2-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-2" id="SQ-1-1-2-6" value="6">
+                <input type="radio" name="SQ-1-1-2" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">内容与老师讲课内容相符一致，结课后能学习几乎全部章节内容</td>
+            <td><input type="radio" name="SQ-1-1-3" id="SQ-1-1-3-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-3" id="SQ-1-1-3-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-3" id="SQ-1-1-3-6" value="6">
+                <input type="radio" name="SQ-1-1-3" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">与先行相关课程所用教材内容重复较少</td>
+            <td><input type="radio" name="SQ-1-1-4" id="SQ-1-1-4-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-4" id="SQ-1-1-4-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-4" id="SQ-1-1-4-6" value="6">
+                <input type="radio" name="SQ-1-1-4" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">实用性强，学习后获得了新技能，利于能力的培养，能够激发学习兴趣</td>
+            <td><input type="radio" name="SQ-1-1-5" id="SQ-1-1-5-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-5" id="SQ-1-1-5-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-5" id="SQ-1-1-5-6" value="6">
+                <input type="radio" name="SQ-1-1-5" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">案例搭配适宜</td>
+            <td><input type="radio" name="SQ-1-1-6" id="SQ-1-1-6-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-6" id="SQ-1-1-6-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-6" id="SQ-1-1-6-6" value="6">
+                <input type="radio" name="SQ-1-1-6" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">文图搭配适当</td>
+            <td><input type="radio" name="SQ-1-1-7" id="SQ-1-1-7-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-7" id="SQ-1-1-7-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-7" id="SQ-1-1-7-6" value="6">
+                <input type="radio" name="SQ-1-1-7" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">习题、思考题齐全</td>
+            <td><input type="radio" name="SQ-1-1-8" id="SQ-1-1-8-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-8" id="SQ-1-1-8-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-8" id="SQ-1-1-8-6" value="6">
+                <input type="radio" name="SQ-1-1-8" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">文字、标点、符号、公式、数据、计题单位标准规范</td>
+            <td><input type="radio" name="SQ-1-1-9" id="SQ-1-1-9-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-9" id="SQ-1-1-9-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-9" id="SQ-1-1-9-6" value="6">
+                <input type="radio" name="SQ-1-1-9" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">价格适中</td>
+            <td><input type="radio" name="SQ-1-1-10" id="SQ-1-1-10-10" value="10"></td>
+            <td><input type="radio" name="SQ-1-1-10" id="SQ-1-1-10-8" value="8"></td>
+            <td><input type="radio" name="SQ-1-1-10" id="SQ-1-1-10-6" value="6">
+                <input type="radio" name="SQ-1-1-10" id="SQ-1-1-1-0" value="0" style="display:none;" checked>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>综合评议</strong></td>
+            <td colspan=4><strong>以上10项总计得分</strong></td>
+            <td colspan=3><div id="S_total"></div></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan="2">印刷质量</td>
+            <td colspan=4 align="left">无缺页、白页、颠倒页，装订平整</td>
+            <td><input type="radio" name="SQ-2-1-1" id="SQ-2-1-1-10" value="10"></td>
+            <td><input type="radio" name="SQ-2-1-1" id="SQ-2-1-1-8" value="8"></td>
+            <td><input type="radio" name="SQ-2-1-1" id="SQ-2-1-1-6" value="6"></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">字迹清楚，纸张良好</td>
+            <td><input type="radio" name="SQ-2-1-2" id="SQ-2-1-2-10" value="10"></td>
+            <td><input type="radio" name="SQ-2-1-2" id="SQ-2-1-2-8" value="8"></td>
+            <td><input type="radio" name="SQ-2-1-2" id="SQ-2-1-2-6" value="6"></td>
+        </tr>
+        <tr>
+            <td colspan=8 align="left">
+                <div style="float:left;width:200px;">是否属于高职高专教材：</div>
+                <div style="float:left;margin-left:70px;"><input type="radio" name="SQ-3-1-1" id="SQ-3-1-1-1" value="1"><label for="SQ-3-1-1-1">是</label></div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-1" id="SQ-3-1-1-0" value="0"><label for="SQ-3-1-1-0">否</label></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=8 align="left">
+                <div style="float:left;width:200px;">您对于该本教材的推荐意见：</div>
+                <div style="float:left;margin-left:70px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-10" value="10"><label for="SQ-3-1-2-10">推荐使用</label></div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-8" value="8"><label for="SQ-3-1-2-8">勉强使用</label></div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-6" value="6"><label for="SQ-3-1-2-6">不推荐使用</label></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=8 align="left">
+                <div>您对本专业所使用教材的其他评价与建议：</div>
+                <div style="margin-top:10px;"><textarea id="S_commond" class="form-control" style="width:100%;" maxlength="200" rows="3"></textarea></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="uuid" style="display:none"></div>
+    <div id="xuehao" style="display:none"></div>
+    <div><button type="button" id="tijiao" class="btn btn-primary btn-lg">提交</button></div>
+</div>
+<!-- .modal start -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">教材调查</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="inputFaculty" class="col-sm-2 control-label">系/专业</label>
+                <div class="col-sm-8">
+                    <select data-width="120px" name="inputFaculty"
+                             id="inputFaculty" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true"
+                             onchange="javascript:getSpecfieldInfo();">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputFacultyOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                    <select data-width="243px" name="inputSpecfield"
+                             id="inputSpecfield" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true"
+                             onchange="javascript:getGlassInfo();">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputSpecfieldOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputGlass" class="col-sm-2 control-label"><span style="letter-spacing:18px;">班</span>级</label>
+                <div class="col-sm-8">
+                    <select data-width="368px" name="inputGlass"
+                             id="inputGlass" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true"
+                             onchange="javascript:getKechengInfo();">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputGlassOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputStudent" class="col-sm-2 control-label"><span style="letter-spacing:18px;">学</span>生</label>
+                <div class="col-sm-8">
+                    <select data-width="368px" name="inputStudent"
+                             id="inputStudent" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputStudentOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputKecheng" class="col-sm-2 control-label"><span style="letter-spacing:18px;">课</span>程</label>
+                <div class="col-sm-8">
+                    <select data-width="368px" name="inputKecheng"
+                             id="inputKecheng" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true"
+                             onchange="javascript:getBookInfo();">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputKechengOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputBook" class="col-sm-2 control-label"><span style="letter-spacing:18px;">教</span>材</label>
+                <div class="col-sm-8">
+                    <select data-width="368px" name="inputBook"
+                             id="inputBook" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true"
+                             disabled="disabled">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputBookOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputTeacher" class="col-sm-2 control-label"><span style="letter-spacing:18px;">教</span>师</label>
+                <div class="col-sm-9">
+                    <select data-width="368px" name="inputTeacher"
+                             id="inputTeacher" data-size="15"
+                             class="selectpicker"
+                             data-hide-disabled="true" data-live-search="true" disabled="disabled">
+                        <optgroup disabled="disabled" label="disabled">
+                            <option>Hidden</option>
+                        </optgroup>
+                        <optgroup label="请选择" id="inputTeacherOption">
+                            <option value="">请选择</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="modal_button">开始</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+<!-- .modal end -->
+
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Bootstrap Js -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.js"></script>-->
+
+<!-- jQuery Select Js -->
+<script src="jquerySelect/bootstrap-select.min.js"></script>
+<script src="res/js/constant.js"></script>
+
+<script>
+    var pro = com.global.project;
+    var str = '';
+    var kechengSize = 0;
+    $(function(){
+        $('#tijiao').click(function(){
+            tijiao();
+        });
+        $('#modal_button').click(function(){
+            $('.container').show();
+            $('#myModal').modal('hide');
+        });
+        $('input:radio[name="SQ-1-1-1"]').change(function(){
+            getSum();
+        });
+        $('input:radio[name="SQ-1-1-2"]').change(function(){
+            getSum();
+        });
+        $('input:radio[name="SQ-1-1-3"]').change(function(){
+            getSum();
+        });
+        $('input:radio[name="SQ-1-1-4"]').change(function(){
+            getSum();
+        });
+        $('input:radio[name="SQ-1-1-5"]').change(function(){
+            getSum();
+        });
+        $('input:radio[name="SQ-1-1-6"]').change(function(){
+            getSum();
+        });
+        $('input:radio[name="SQ-1-1-7"]').change(function(){
+            getSum();
+        });
+        $('input:radio[name="SQ-1-1-8"]').change(function(){
+            getSum();
+        });
+        $('input:radio[name="SQ-1-1-9"]').change(function(){
+            getSum();
+        });
+        $('input:radio[name="SQ-1-1-10"]').change(function(){
+            getSum();
+        });
+        $.get('/'+pro+'/async/table/getdiaocaistudent.cc',function(data,status){
+            $("#inputFacultyOption").empty();
+            $("#inputFacultyOption").append('<option value="">请选择</option>');
+            if(data.code == 200) {
+                bookList = data.data;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    $("#inputFacultyOption").append('<option value="'+book.yuanxi+'">'+book.yuanxi+'</option>');
+                }
+                $('.selectpicker').selectpicker('refresh');
+            }
+        });
+
+        $('#myModal').modal({'backdrop':'static'});
+        $('#myModal').modal('show');
+        $('#modal_button').attr('disabled',true);
+        $('.container').hide();
+    });
+
+    function getSpecfieldInfo() {
+        var yuanxi = $('#inputFacultyOption option:selected').val();
+        var param = {"yuanxi":yuanxi};
+        $.post('/'+pro+'/async/table/getdiaocaistudent.cc',param,function(data,status){
+            $("#inputSpecfieldOption").empty();
+            $("#inputSpecfieldOption").append('<option value="">请选择</option>');
+            $("#inputGlassOption").empty();
+            $("#inputGlassOption").append('<option value="">请选择</option>');
+            $("#inputKechengOption").empty();
+            $("#inputKechengOption").append('<option value="">请选择</option>');
+            $("#inputBookOption").empty();
+            $("#inputBookOption").append('<option value="">请选择</option>');
+            $("#inputTeacherOption").empty();
+            $("#inputTeacherOption").append('<option value="">请选择</option>');
+            if(data.code == 200) {
+                bookList = data.data;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    $("#inputSpecfieldOption").append('<option value="'+book.zhuanye+'">'+book.zhuanye+'</option>');
+                }
+                $('.selectpicker').selectpicker('refresh');
+                $('#modal_button').attr('disabled',true);
+            }
+        });
+    }
+
+    function getGlassInfo() {
+        var yuanxi = $('#inputFacultyOption option:selected').val();
+        var zhuanye = $('#inputSpecfieldOption option:selected').val();
+        var param = {"yuanxi":yuanxi,"zhuanye":zhuanye};
+        $.post('/'+pro+'/async/table/getdiaocaistudent.cc',param,function(data,status){
+            $("#inputGlassOption").empty();
+            $("#inputGlassOption").append('<option value="">请选择</option>');
+            $("#inputKechengOption").empty();
+            $("#inputKechengOption").append('<option value="">请选择</option>');
+            $("#inputBookOption").empty();
+            $("#inputBookOption").append('<option value="">请选择</option>');
+            $("#inputTeacherOption").empty();
+            $("#inputTeacherOption").append('<option value="">请选择</option>');
+            if(data.code == 200) {
+                bookList = data.data;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    $("#inputGlassOption").append('<option value="'+book.banji+'">'+book.banji+'</option>');
+                }
+                $('.selectpicker').selectpicker('refresh');
+                $('#modal_button').attr('disabled',true);
+            }
+        });
+    }
+
+    function getKechengInfo() {
+        var yuanxi = $('#inputFacultyOption option:selected').val();
+        var zhuanye = $('#inputSpecfieldOption option:selected').val();
+        var banji = $('#inputGlassOption option:selected').val();
+        var param = {"yuanxi":yuanxi,"zhuanye":zhuanye,"banji":banji};
+        $.post('/'+pro+'/async/table/getdiaocaistudent.cc',param,function(data,status){
+            $("#inputKechengOption").empty();
+            $("#inputKechengOption").append('<option value="">请选择</option>');
+            $("#inputBookOption").empty();
+            $("#inputBookOption").append('<option value="">请选择</option>');
+            $("#inputTeacherOption").empty();
+            $("#inputTeacherOption").append('<option value="">请选择</option>');
+            if(data.code == 200) {
+                bookList = data.data;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    $("#inputKechengOption").append('<option value="'+book.uuid+'">'+book.kecheng+'</option>');
+                }
+                kechengSize = bookList.length;
+                $('.selectpicker').selectpicker('refresh');
+                $('#modal_button').attr('disabled',true);
+            }
+        });
+        // 获取学生信息
+        $.post('/'+pro+'/async/table/getstudent.cc',param,function(data,status){
+            $("#inputStudentOption").empty();
+            $("#inputStudentOption").append('<option value="">请选择</option>');
+            if(data.code == 200) {
+                bookList = data.data;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    $("#inputStudentOption").append('<option value="'+book.xuehao+'">'+book.xingming+'('+book.xuehao+')</option>');
+                }
+                $('.selectpicker').selectpicker('refresh');
+                $('#modal_button').attr('disabled',true);
+            }
+        });
+    }
+    function getKechengInfo2() {
+        var yuanxi = $('#inputFacultyOption option:selected').val();
+        var zhuanye = $('#inputSpecfieldOption option:selected').val();
+        var banji = $('#inputGlassOption option:selected').val();
+        var param = {"yuanxi":yuanxi,"zhuanye":zhuanye,"banji":banji};
+        $.post('/'+pro+'/async/table/getdiaocaistudent.cc',param,function(data,status){
+            $("#inputKechengOption").empty();
+            $("#inputKechengOption").append('<option value="" selected>请选择</option>');
+            $("#inputBookOption").empty();
+            $("#inputBookOption").append('<option value="" selected>请选择</option>');
+            $("#inputTeacherOption").empty();
+            $("#inputTeacherOption").append('<option value="" selected>请选择</option>');
+            if(data.code == 200) {
+                bookList = data.data;
+                var cnt = 0;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    if(str.indexOf(book.kecheng) >= 0) {
+                        // 已经评价过了
+                    } else {
+                        $("#inputKechengOption").append('<option value="'+book.uuid+'">'+book.kecheng+'</option>');
+                        cnt++;
+                    }
+                }
+                kechengSize = cnt;
+                $('.selectpicker').selectpicker('refresh');
+                $('#modal_button').attr('disabled',true);
+            }
+        });
+    }
+
+    function getBookInfo() {
+        var uuid = $('#inputKechengOption option:selected').val();
+        var param = {"uuid":uuid};
+        $.post('/'+pro+'/async/table/getdiaocaistudent.cc',param,function(data,status){
+            $("#inputTeacherOption").empty();
+            $("#inputBookOption").empty();
+            if(data.code == 200) {
+                bookList = data.data;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    $("#inputTeacherOption").append('<option value="'+book.jiaoshi+'" selected>'+book.jiaoshi+'</option>');
+                    $("#inputBookOption").append('<option value="'+book.uuid+'" selected>'+book.jiaocai+'('+book.banbie+')</option>');
+                    init(book);
+                }
+                $('.selectpicker').selectpicker('refresh');
+                $('#modal_button').attr('disabled',false);
+            }
+        });
+    }
+
+    function init(book) {
+        var xuehao = $('#inputStudentOption option:selected').val();
+        $('#xuehao').text(xuehao);
+        $('#uuid').text(book.uuid);
+        $('#table_term').text(book.term);
+        $('#kecheng').text(book.kecheng);
+        $('#name').text(book.jiaoshi);
+        $('#class').text(book.yuanxi);
+        $('#glass').text(book.banji);
+        $('#book_title').text(book.jiaocai);
+        $('#book_publish').text(book.banbie);
+        $('#book_author').text(book.zuozhe);
+        $('#book_isbn').text(book.isbn);
+        $('#S_commond').val('');
+        $('#tijiao').attr('disabled',false);
+    }
+
+    function getSum() {
+        var a1 = $('input[name="SQ-1-1-1"]:checked').val();
+        var a2 = $('input[name="SQ-1-1-2"]:checked').val();
+        var a3 = $('input[name="SQ-1-1-3"]:checked').val();
+        var a4 = $('input[name="SQ-1-1-4"]:checked').val();
+        var a5 = $('input[name="SQ-1-1-5"]:checked').val();
+        var a6 = $('input[name="SQ-1-1-6"]:checked').val();
+        var a7 = $('input[name="SQ-1-1-7"]:checked').val();
+        var a8 = $('input[name="SQ-1-1-8"]:checked').val();
+        var a9 = $('input[name="SQ-1-1-9"]:checked').val();
+        var a10 = $('input[name="SQ-1-1-10"]:checked').val();
+        var sum = Number(a1)+Number(a2)+Number(a3)+Number(a4)+Number(a5)+Number(a6)+Number(a7)+Number(a8)+Number(a9)+Number(a10);
+        $('#S_total').text(sum);
+    }
+
+    function checkIsChecked() {
+        return true;
+    }
+
+    function tijiao() {
+        var msg = '';
+        if(!checkIsChecked()) {
+            return;
+        }
+        $.ajax({
+            url:'async/diaocha/student.cc',
+            type:'POST',
+            async:true,
+            dataType:'json',
+            processData:true,
+            contentType:"application/json; charset=UTF-8",
+            data:JSON.stringify({'uuid':$('#uuid').text(),
+                'xuehao':$('#xuehao').text(),
+                'Q1_1':$('input[name="SQ-1-1-1"]:checked').val(),
+                'Q1_2':$('input[name="SQ-1-1-2"]:checked').val(),
+                'Q1_3':$('input[name="SQ-1-1-3"]:checked').val(),
+                'Q1_4':$('input[name="SQ-1-1-4"]:checked').val(),
+                'Q1_5':$('input[name="SQ-1-1-5"]:checked').val(),
+                'Q1_6':$('input[name="SQ-1-1-6"]:checked').val(),
+                'Q1_7':$('input[name="SQ-1-1-7"]:checked').val(),
+                'Q1_8':$('input[name="SQ-1-1-8"]:checked').val(),
+                'Q1_9':$('input[name="SQ-1-1-9"]:checked').val(),
+                'Q1_10':$('input[name="SQ-1-1-10"]:checked').val(),
+                'Q1_sum':0,
+                'Q2_1':$('input[name="SQ-2-1-1"]:checked').val(),
+                'Q2_2':$('input[name="SQ-2-1-2"]:checked').val(),
+                'Q3_1':$('input[name="SQ-3-1-1"]:checked').val(),
+                'Q3_2':$('input[name="SQ-3-1-2"]:checked').val(),
+                'Scomments':$('#S_commond').val()
+            }),
+            success:function(resp){
+                if(200 == resp.code) {
+                    $('#tijiao').attr('disabled',true);
+                    str = str + $('#kecheng').text() + ',';
+                    alert('提交成功');
+                    if(kechengSize >= 2) {
+                        ss = kechengSize-1;
+                        r = confirm("你还有"+ss+"本教材需要评价, 是否继续?");
+                        if(true==r) {
+                            getKechengInfo2();
+                            $('.container').hide();
+                            $('#modal_button').attr('disabled',true);
+                            $('#myModal').modal('show');
+                        } else {
+                            window.location.href='index.html';
+                        }
+                    } else {
+                        window.location.href='index.html';
+                    }
+                } else if(401 == resp.code) {
+                    alert('登陆失效，请重新登陆');
+                } else {
+                    alert('resp.msg');
+                }
+            },
+            error:function(err){
+                alert('提示','正在处理中...');
+            }
+        });
+        return;
+    }
+</script>
+</body>
+</html>

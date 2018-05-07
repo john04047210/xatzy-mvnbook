@@ -1,0 +1,61 @@
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',split:false,border:false" style="margin:2px 0 2px 3px;overflow:hidden;">
+        <div id="jiaoshitj_tb_searcher" class="easyui-panel" data-options="border:false">
+            <form id="jiaoshitjSearcherForm" class="easyui-form" data-options="novalidate:true" style="margin:2px;">
+                <input id="jiaoshitjSearcher" class="easyui-searchbox easyui-validatebox" style="width:300px"
+                       data-options="searcher:searchjiaoshitj,prompt:'Please Input Value',menu:'#jiaoshitjSearcher_mm',required:false" />
+                <div id="jiaoshitjSearcher_mm" style="width:120px">
+                    <div data-options="name:'jiaoshi',iconCls:'icon-ok'">教师</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
+        <table id="jiaoshitj_dg" class="easyui-datagrid" style="height:570px;" data-options="
+                rownumbers:true,
+                singleSelect:false,
+                autoRowHeight:false,
+                fitColumns:true,
+                resizeHandle:'right',
+                striped:true,
+                nowrap:true,
+                fit:true,
+                loadMsg:'数据加载中...',
+                toolbar:'#jiaoshitj_tb_edit'">
+            <thead>
+            <tr>
+                <th data-options="field:'uuid',hidden:true,width:100,fixed:true,align:'left'" rowspan="2">uuid</th>
+                <th data-options="field:'jiaoshi_id',width:80,fixed:true,align:'left'" rowspan="2">工号</th>
+                <th data-options="field:'jiaoshi',width:150,fixed:true,align:'left'" rowspan="2">教师</th>
+                <th data-options="field:'danwei',width:100,fixed:true,align:'left'" rowspan="2">所在系部</th>
+                <th data-options="field:'jiaocai',width:260,fixed:true,align:'left'" rowspan="2">教材名称</th>
+                <th data-options="field:'isbn',width:100,fixed:true,align:'left'" rowspan="2">ISBN号</th>
+                <th data-options="field:'zuozhe',width:80,fixed:true,align:'left'" rowspan="2">作者</th>
+                <th data-options="field:'banbie',width:80,fixed:true,align:'left'" rowspan="2">版别</th>
+                <th data-options="field:'banji',width:100,fixed:true,align:'left'" rowspan="2">行政班级</th>
+                <th data-options="field:'renshu',width:70,fixed:true,align:'left'" rowspan="2">班级人数</th>
+                <th colspan="5">学生评价</th>
+                <th colspan="5">教师评价</th>
+            </tr>
+            <tr>
+                <th data-options="field:'renshu_s',width:70,fixed:true,align:'center'">评议数量</th>
+                <th data-options="field:'Q3_2_s_tj',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_s);return value+'('+per+')';}return value;}">推荐使用</th>
+                <th data-options="field:'Q3_2_s_mq',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_s);return value+'('+per+')';}return value;}">勉强使用</th>
+                <th data-options="field:'Q3_2_s_no',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_s);return value+'('+per+')';}return value;}">不推荐使用</th>
+                <th data-options="field:'Scomments',width:170,fixed:true,align:'center'">评议内容</th>
+                <th data-options="field:'renshu_t',width:70,fixed:true,align:'center'">评议数量</th>
+                <th data-options="field:'Q3_2_t_tj',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_t);return value+'('+per+')';}return value;}">推荐使用</th>
+                <th data-options="field:'Q3_2_t_mq',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_t);return value+'('+per+')';}return value;}">勉强使用</th>
+                <th data-options="field:'Q3_2_t_no',width:70,fixed:true,align:'center',formatter:function(value,row,index){if(value>0){var per=Percentage(value,row.renshu_t);return value+'('+per+')';}return value;}">不推荐使用</th>
+                <th data-options="field:'Tcomments',width:170,fixed:true,align:'center'">评议内容</th>
+            </tr>
+            </thead>
+        </table>
+        <div id="jiaoshitj_tb_edit" style="padding:1px; height:auto;">
+            <!--<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="savejiaoshitj(3)">结束评价</a>-->
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save',plain:true" onclick="savejiaoshitj()">导出</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" style="float:right;" data-options="iconCls:'icon-reload',plain:true" onclick="searchjiaoshitjall()">刷新</a>
+        </div>
+    </div>
+</div>
+<script src="appraise/jiaoshitj.js" type="text/javascript"></script>

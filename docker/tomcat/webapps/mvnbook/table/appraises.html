@@ -1,0 +1,61 @@
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',split:false,border:false" style="margin:2px 0 2px 3px;overflow:hidden;">
+        <div id="appraises_tb_searcher" class="easyui-panel" data-options="border:false">
+            <form id="appraisesSearcherForm" class="easyui-form" data-options="novalidate:true" style="margin:2px;">
+                <input id="appraisesSearcher" class="easyui-searchbox easyui-validatebox" style="width:300px"
+                       data-options="searcher:searchappraises,prompt:'Please Input Value',menu:'#appraisesSearcher_mm',required:false" />
+                <div id="appraisesSearcher_mm" style="width:120px">
+                    <div data-options="name:'ISBN',iconCls:'icon-ok'">ISBN号</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
+        <table id="appraises_dg" class="easyui-datagrid" style="height:570px;" data-options="
+                rownumbers:true,
+                singleSelect:true,
+                autoRowHeight:false,
+                fitColumns:true,
+                resizeHandle:'right',
+                striped:true,
+                nowrap:true,
+                fit:true,
+                loadMsg:'数据加载中...',
+                toolbar:'#appraises_tb_edit'">
+            <thead>
+            <tr>
+                <th data-options="field:'rid',hidden:true,width:100,fixed:true,align:'left'">rid</th>
+                <th data-options="field:'ISBN',width:100,fixed:true,align:'left'">ISBN</th>
+                <th data-options="field:'BookTitle',width:100,fixed:false,align:'right'">书名</th>
+                <th data-options="field:'BookAuthor',width:100,fixed:false,align:'right'">作者</th>
+                <th data-options="field:'DepartmentCD',hidden:true,width:120,fixed:true,align:'right'">承担单位CD</th>
+                <th data-options="field:'DepartmentTX',width:120,fixed:true,align:'right'">承担单位</th>
+                <th data-options="field:'FacultyCD',hidden:true,width:100,fixed:false,align:'right'">系CD</th>
+                <th data-options="field:'FacultyTX',width:100,fixed:false,align:'right'">系</th>
+                <th data-options="field:'SpecializedFieldCD',hidden:true,width:100,fixed:false,align:'right'">专业CD</th>
+                <th data-options="field:'SpecializedFieldTX',width:100,fixed:false,align:'right'">专业</th>
+                <th data-options="field:'ClassCD',hidden:true,width:100,fixed:false,align:'right'">班级CD</th>
+                <th data-options="field:'ClassTX',width:100,fixed:false,align:'right'">班级</th>
+                <th data-options="field:'LessonCD',hidden:true,width:100,fixed:false,align:'right'">课程CD</th>
+                <th data-options="field:'LessonTX',width:100,fixed:false,align:'right'">课程</th>
+                <th data-options="field:'TermCD',hidden:true,width:100,fixed:false,align:'right'">学期CD</th>
+                <th data-options="field:'TermTX',width:100,fixed:false,align:'right'">学期</th>
+                <th data-options="field:'TeacherCD',hidden:true,width:100,fixed:false,align:'right'">教师工号</th>
+                <th data-options="field:'TeacherTX',width:100,fixed:false,align:'right'">教师</th>
+                <th data-options="field:'TRecommendCD',hidden:true,width:100,fixed:false,align:'right'">教师推荐CD</th>
+                <th data-options="field:'TRecommendTX',width:100,fixed:false,align:'right'">教师推荐</th>
+                <th data-options="field:'SRecommendCD',hidden:true,width:100,fixed:false,align:'right'">班级推荐CD</th>
+                <th data-options="field:'SRecommendTX',width:100,fixed:false,align:'right'">班级推荐</th>
+                <th data-options="field:'Tcomments',width:100,fixed:false,align:'right'">教师评价</th>
+                <th data-options="field:'Scomments',width:100,fixed:false,align:'right'">班级评价</th>
+            </tr>
+            </thead>
+        </table>
+        <div id="appraises_tb_edit" style="padding:1px; height:auto;">
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="editappraises(2)">新增</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" onclick="editappraises(1)">变更</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="editappraises(0)">删除</a>
+        </div>
+    </div>
+</div>
+<script src="res/js/appraises.js" type="text/javascript"></script>

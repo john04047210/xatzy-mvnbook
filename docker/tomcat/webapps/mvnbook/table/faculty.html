@@ -1,0 +1,40 @@
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'north',split:false,border:false" style="margin:2px 0 2px 3px;overflow:hidden;">
+        <div id="faculty_tb_searcher" class="easyui-panel" data-options="border:false">
+            <form id="facultySearcherForm" class="easyui-form" data-options="novalidate:true" style="margin:2px;">
+                <input id="facultySearcher" class="easyui-searchbox easyui-validatebox" style="width:300px"
+                       data-options="searcher:searchfaculty,prompt:'Please Input Value',menu:'#facultySearcher_mm',required:false" />
+                <div id="facultySearcher_mm" style="width:120px">
+                    <div data-options="name:'faculty_code',iconCls:'icon-ok'">系CD</div>
+                    <div data-options="name:'faculty_text',iconCls:'icon-ok'">系名称</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
+        <table id="faculty_dg" class="easyui-datagrid" style="height:570px;" data-options="
+                rownumbers:true,
+                singleSelect:true,
+                autoRowHeight:false,
+                fitColumns:true,
+                resizeHandle:'right',
+                striped:true,
+                nowrap:true,
+                fit:true,
+                loadMsg:'数据加载中...',
+                toolbar:'#faculty_tb_edit'">
+            <thead>
+            <tr>
+                <th data-options="field:'code',width:100,fixed:true,align:'right'">系CD</th>
+                <th data-options="field:'value',width:120,fixed:false,align:'left'">系名称</th>
+            </tr>
+            </thead>
+        </table>
+        <div id="faculty_tb_edit" style="padding:1px; height:auto;">
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="editfaculty(2)">新增</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" onclick="editfaculty(1)">更新</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="editfaculty(0)">删除</a>
+        </div>
+    </div>
+</div>
+<script src="res/js/faculty.js" type="text/javascript"></script>

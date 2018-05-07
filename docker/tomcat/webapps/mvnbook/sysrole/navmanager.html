@@ -1,0 +1,53 @@
+<div class="easyui-layout" data-options="fit:true">
+    <!--<div data-options="region:'north',split:false,border:false" style="margin:2px 0 2px 3px;overflow:hidden;">
+        <div id="navigate_tb_searcher" class="easyui-panel" data-options="border:false">
+            <form id="navigateSearcherForm" class="easyui-form" data-options="novalidate:true" style="margin:2px;">
+                <input id="navigateSearcher" class="easyui-searchbox easyui-validatebox" style="width:300px"
+                       data-options="searcher:searchnavigate,prompt:'Please Input Value',menu:'#navigateSearcher_mm',required:false" />
+                <div id="navigateSearcher_mm" style="width:120px">
+                    <div data-options="name:'ISBN',iconCls:'icon-ok'">ISBN号</div>
+                    <div data-options="name:'BookTitle',iconCls:'icon-ok'">书名</div>
+                    <div data-options="name:'BookAuthor',iconCls:'icon-ok'">作者</div>
+                </div>
+            </form>
+        </div>
+    </div>-->
+    <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
+        <table id="navigate_dg" class="easyui-treegrid" style="height:570px;" data-options="
+                idField:'treeId',
+                treeField:'text',
+                rownumbers:true,
+                singleSelect:true,
+                autoRowHeight:false,
+                fitColumns:true,
+                resizeHandle:'right',
+                striped:true,
+                nowrap:true,
+                fit:true,
+                loadMsg:'数据加载中...',
+                toolbar:'#navigate_tb_edit'">
+            <thead>
+            <tr>
+                <th data-options="field:'text',width:200,fixed:true,align:'left'">名称</th>
+                <th data-options="field:'treeId',width:80,fixed:true,align:'left'">节点id</th>
+                <th data-options="field:'state',width:80,fixed:true,align:'right'">打开</th>
+                <th data-options="field:'checked',width:80,fixed:true,align:'right'">选中</th>
+                <th data-options="field:'iconCls',width:120,fixed:true,align:'right'">图标</th>
+                <th data-options="field:'attr_level',width:60,fixed:true,align:'right'">层级</th>
+                <th data-options="field:'attr_isleaf',width:60,fixed:true,align:'right'">叶节点</th>
+                <th data-options="field:'attr_parents',width:60,fixed:true,align:'right'">父节点</th>
+                <th data-options="field:'attr_url',width:120,fixed:false,align:'left'">链接</th>
+                <th data-options="field:'powercd',width:120,hidden:true,fixed:true,align:'right'">权限</th>
+                <th data-options="field:'power',width:80,fixed:true,align:'right'">权限</th>
+                <th data-options="field:'show',width:80,fixed:true,align:'right'">显示</th>
+            </tr>
+            </thead>
+        </table>
+        <div id="navigate_tb_edit" style="padding:1px; height:auto;">
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" onclick="editnavigate(2)">新增</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" onclick="editnavigate(1)">更新</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="editnavigate(0)">删除</a>
+        </div>
+    </div>
+</div>
+<script src="res/js/navigate.js" type="text/javascript"></script>

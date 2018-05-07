@@ -1,0 +1,83 @@
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
+        <div style="margin:15px 0 5px 10px;">
+            <form id="importfiledlg" class="easyui-form" data-options="novalidate:true" style="margin:2px 0 1px 7px;">
+                <div style="margin:0;">
+                    <span style="margin:0 5px 0 0;">Sheet</span>
+                    <input type="text" class="easyui-textbox easyui-validatebox" id="sheetName" style="width:200px;" data-options="prompt:'输入要导入Excel的SheetName',required:true,validType:'length[1,32]'" />
+                </div>
+                <div style="margin-top:4px;">
+                    <span style="margin:0 5px 0 6px;">表名</span>
+                    <input type="text" class="easyui-combobox easyui-validatebox" id="tablename" style="width:200px;" data-options="valueField:'code',textField:'value',url:'table/tablename.json',method:'get',prompt:'选择要导入的表名',required:true,editable:false" />
+                </div>
+                <div style="margin-top:4px;">
+                    <span style="margin:0 5px 0 0;">Excel</span>
+                    <input style="display:none"  readOnly="true" id="filePath" name="filePath" type="text" placeholder="">
+                    <input type="text" class="easyui-textbox easyui-validatebox" id="fileName" style="width:150px;" name="fileName" data-options="prompt:'',required:true">
+                    <input type="file" id="uploadFile" />
+                </div>
+            </form>
+        </div>
+        <div style="padding:5px; height:auto; margin-left:50px; margin-top:-20px;">
+            <a href="javascript:void(0)" class="easyui-linkbutton" style="width:200px;" data-options="iconCls:'icon-ok',plain:false" id="importFile">提交</a>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $('#uploadFile').uploadify({
+            'buttonClass': 'easyui-linkbutton',
+            'swf': 'uploadify/uploadify.swf',
+            'uploader': 'async/table/uploadFile.cc',
+            'buttonText':'文件',
+            'fileObjName':'uploadFile',
+            'fileTypeDesc' : 'Excel Files',
+            'fileTypeExts' : '*.xls; *.xlsx',
+            'multi': false,
+            'width': 45,
+            'height': 28,
+            'onUploadSuccess': function (file, data, response) {
+                resp = $.parseJSON(data);
+                if(resp.code==200) {
+                    $('#fileName').textbox('readonly',true);
+                    $('#fileName').textbox('setValue',file.name);
+                    $("#filePath").val(resp.data);
+                } else {
+                    $('#fileName').textbox('readonly',true);
+                    $('#fileName').textbox('setValue','');
+                    $("#filePath").val('');
+                }
+            }
+        });
+
+        $('#importFile').click(function(){
+            var param = {'sheetName':$('#sheetName').val(),'filePath':$('#filePath').val(),'tablename':$('#tablename').combobox('getValue')};
+            $.ajax({
+                url:'async/table/importFile.cc',
+                type:'POST',
+                async:true,
+                dataType:'json',
+                data:param,
+                success:function(resp){
+                    if(200 == resp.code) {
+                        msg = 'Excel导入成功<br/>需要处理: ' + resp.data + '条记录，请稍后...';
+                        $.messager.alert('提示',msg,'info',function(){$('#dlgPopup').dialog('close');});
+                    } else if(401 == resp.code) {
+                        $.messager.alert('错误','登陆失效，请重新登陆','error',function(){window.location.href=com.global.login_href;});
+                    } else if(406 == resp.code) {
+                        // 操作安全码校验失败
+                        $.messager.alert('错误',resp.msg,'error',function(){$('#dlgPopup').dialog('close');});
+                    } else if(412 <= resp.code) {
+                        // 验证码校验失败
+                        $.messager.alert('错误',resp.msg,'error');
+                    } else {
+                        $.messager.alert('错误','Excel导入失败','error',function(){$('#dlgPopup').dialog('close');});
+                    }
+                },
+                error:function(err){
+                    $.messager.alert('提示','数据处理中，请稍后...','info',function(){$('#dlgPopup').dialog('close');});
+                }
+            });
+        });
+    });
+</script>

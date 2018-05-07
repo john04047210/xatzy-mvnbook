@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Title</title>
+    <!-- Bootstrap Styles-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css" rel="stylesheet">-->
+    <style>
+        .table-bordered {
+            border: 2px solid #ddd;
+        }
+        .table-center {
+            text-align:center;
+            align:center;
+            vertical-align: middle !important;
+        }
+        .table-break {
+            word-wrap:break-word;
+        }
+        .table-backimg-paper {
+            background-image: url(res/themes/images/paper.gif);
+            background-position: left top;
+            background-repeat: repeat;
+            #padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <table class="table table-bordered table-hover table-center table-break">
+        <caption class="table-center">
+            <div><h2>西安铁路职业技术学院</h2></div>
+            <div id="table_term">2016-2017-01学期</div>
+            <div><h5>教材使用适用性调查表(学生统计用)</h5></div>
+        </caption>
+        <thead>
+        <tr>
+            <th colspan=6>
+                <p style="text-indent:30px;">为促进我校教材管理工作，及时了解同学们对所使用教材的意见和建议，请您对本学期所用的教材进行客观、公正的评价。您的评价对提高学校教学质量和维护您自身的权益都将起到重要作用。请您把教材使用情况按下列指标进行评价。谢谢！</p>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="table-center" width="100px" rowspan=2>课程名称</td>
+            <td class="table-center" rowspan=2></td>
+            <td class="table-center" width="100px" rowspan=2>授课教师</td>
+            <td class="table-center" rowspan=2></td>
+            <td width="160px">所在系</td>
+            <td width="150px"><div id="class">电气工程系</div></td>
+        </tr>
+        <tr>
+            <td>专业、班级</td>
+            <td><div id="">电气化铁道1402</div></td>
+        </tr>
+        <tr>
+            <td>教材名称</td>
+            <td><div id="book_title"></div></td>
+            <td class="table-center" rowspan=2>出 版 社</td>
+            <td class="table-center" rowspan=2><div id="book_pub"></div></td>
+            <td class="table-center" rowspan=2>作    者</td>
+            <td class="table-center" rowspan=2><div id="book_author"></div></td>
+        </tr>
+        <tr>
+            <td>ISBN号</td>
+            <td><div id="book_isbn"></div></td>
+        </tr>
+        <tr>
+            <td>项    目</td>
+            <td colspan=4>评价指标</td>
+            <td>分项平均得分</td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan=10>内容质量</td>
+            <td colspan=4 align="left">内容精练、难度适中、层次分明、条理清晰</td>
+            <td><div id="SQ-1-1-1-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">章节学习目标明确、重点难点突出</td>
+            <td><div id="SQ-1-1-2-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">内容与老师讲课内容相符一致，结课后能学习几乎全部章节内容</td>
+            <td><div id="SQ-1-1-3-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">与先行相关课程所用教材内容重复较少</td>
+            <td><div id="SQ-1-1-4-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">实用性强，学习后获得了新技能，利于能力的培养，能够激发学习兴趣</td>
+            <td><div id="SQ-1-1-5-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">案例搭配适宜</td>
+            <td><div id="SQ-1-1-6-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">文图搭配适当</td>
+            <td><div id="SQ-1-1-7-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">习题、思考题齐全</td>
+            <td><div id="SQ-1-1-8-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">文字、标点、符号、公式、数据、计题单位标准规范</td>
+            <td><div id="SQ-1-1-9-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">价格适中</td>
+            <td><div id="SQ-1-1-10-T"></div></td>
+        </tr>
+        <tr>
+            <td><strong>综合评议</strong></td>
+            <td colspan=4><strong>以上10项总计得分</strong></td>
+            <td><div id="S_total"></div></td>
+        </tr>
+        <tr>
+            <td class="table-center" rowspan="2">印刷质量</td>
+            <td colspan=4 align="left">无缺页、白页、颠倒页，装订平整</td>
+            <td><div id="SQ-2-1-1-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=4 align="left">字迹清楚，纸张良好</td>
+            <td><div id="SQ-2-1-2-T"></div></td>
+        </tr>
+        <tr>
+            <td colspan=6 align="left">
+                <div style="float:left;width:200px;">是否属于高职高专教材：</div>
+                <div style="float:left;margin-left:70px;"><input type="radio" name="SQ-3-1-1" id="SQ-3-1-1-1" value="1"><label for="SQ-3-1-1-1">是</label></div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-1" id="SQ-3-1-1-0" value="0"><label for="SQ-3-1-1-0">否</label>：</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=6 align="left">
+                <div style="float:left;width:200px;">您对于该本教材的推荐意见：</div>
+                <div style="float:left;margin-left:70px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-10" value="10"><label for="SQ-3-1-2-10">推荐使用</label></div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-8" value="8"><label for="SQ-3-1-2-8">勉强使用</label>：</div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-6" value="6"><label for="SQ-3-1-2-6">不推荐使用</label>：</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan=6 align="left">
+                <div>您对本专业所使用教材的其他评价与建议：</div>
+                <div style="margin-top:10px;"><textarea id="S_commond" class="form-control" style="width:100%;" maxlength="200" rows="3"></textarea></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Bootstrap Js -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.js"></script>-->
+<script></script>
+<!-- Latest compiled and minified Locales -->
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/locale/bootstrap-table-zh-CN.min.js"></script>-->
+</body>
+</html>
