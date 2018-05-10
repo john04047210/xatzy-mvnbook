@@ -234,11 +234,11 @@
         <!-- 文件上传 -->
         <url-pattern>/async/table/uploadFile.cc</url-pattern>
         <url-pattern>/async/table/importFile.cc</url-pattern>
-        <url-pattern>/async/table/getdiaocaistudent.cc</url-pattern>
-        <url-pattern>/async/table/getdiaocaiteacher.cc</url-pattern>
+        <url-pattern>/async/table/getdiaochastudent.cc</url-pattern>
+        <url-pattern>/async/table/getdiaochateacher.cc</url-pattern>
         <url-pattern>/async/table/getstudent.cc</url-pattern>
         <!-- 不对外提供 -->
-        <url-pattern>/async/table/move.cc</url-pattern>
+        <!-- <url-pattern>/async/table/move.cc</url-pattern> -->
 
         <!-- 教师调查数据提交 -->
         <url-pattern>/async/diaocha/teacher.cc</url-pattern>

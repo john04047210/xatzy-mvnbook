@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>教材评价(老师)</title>
     <!-- Bootstrap Styles-->
-    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.css" rel="stylesheet" />
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" />
     <!-- Latest compiled and minified CSS -->
     <!--<link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css" rel="stylesheet">-->
 
@@ -313,9 +313,9 @@
 
 <!-- JS Scripts-->
 <!-- jQuery Js -->
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <!-- Bootstrap Js -->
-<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.js"></script>-->
 
@@ -338,7 +338,7 @@
             $('#myModal').modal('hide');
 
         });
-        $.get('/'+pro+'/async/table/getdiaocaiteacher.cc',function(data,status){
+        $.get('/'+pro+'/async/table/getdiaochateacher.cc',function(data,status){
             if(data.code == 200) {
                 $("#inputTeacherOption").empty();
                 $("#inputTeacherOption").append('<option value="">请选择</option>');
@@ -368,7 +368,7 @@
     function getKechengInfo() {
         var jiaoshi_id = $('#inputTeacherOption option:selected').val();
         var param = {"jiaoshi_id":jiaoshi_id};
-        $.post('/'+pro+'/async/table/getdiaocaiteacher.cc',param,function(data,status){
+        $.post('/'+pro+'/async/table/getdiaochateacher.cc',param,function(data,status){
             if(data.code == 200) {
                 $("#inputKechengOption").empty();
                 $("#inputKechengOption").append('<option value="" selected>请选择</option>');
@@ -397,7 +397,7 @@
         var jiaoshi_id = $('#inputTeacherOption option:selected').val();
         var kecheng_id = $('#inputKechengOption option:selected').val();
         var param = {"jiaoshi_id":jiaoshi_id,"kecheng_id":kecheng_id};
-        $.post('/'+pro+'/async/table/getdiaocaiteacher.cc',param,function(data,status){
+        $.post('/'+pro+'/async/table/getdiaochateacher.cc',param,function(data,status){
             if(data.code == 200) {
                 $("#inputBookOption").empty();
                 $("#inputBanjiOption").val('');
@@ -420,7 +420,7 @@
         var kecheng_id = $('#inputKechengOption option:selected').val();
         var jiaocai_id = $('#inputBookOption option:selected').val();
         var param = {"jiaoshi_id":jiaoshi_id,"kecheng_id":kecheng_id,"jiaocai":jiaocai_id};
-        $.post('/'+pro+'/async/table/getdiaocaiteacher.cc',param,function(data,status){
+        $.post('/'+pro+'/async/table/getdiaochateacher.cc',param,function(data,status){
             if(data.code == 200) {
                 bookList = data.data;
                 var banji = '';
@@ -442,7 +442,7 @@
         var kecheng_id = $('#inputKechengOption option:selected').val();
         var jiaocai_id = $('#inputBookOption option:selected').val();
         var param = {"jiaoshi_id":jiaoshi_id,"kecheng_id":kecheng_id,"jiaocai":jiaocai_id,"detail":1};
-        $.post('/'+pro+'/async/table/getdiaocaiteacher.cc',param,function(data,status){
+        $.post('/'+pro+'/async/table/getdiaochateacher.cc',param,function(data,status){
             if(data.code == 200) {
                 bookList = data.data;
                 var banji = '';
