@@ -4,9 +4,11 @@
             <span style="margin:0 5px 0 0;">节点id</span><input type="text" class="easyui-textbox easyui-validatebox" id="treeid" style="width:136px;" data-options="prompt:'必须项',required:true" />
         </div>
         <div style="margin:4px 0 0 12px;">
-            <span style="margin:0 5px 0 0;">层级</span><select class="easyui-combobox easyui-validatebox" id="attr_level" style="width:102px;" data-options="prompt:'必须项',required:false" >
-            <option value=1>第一级</option><option value=2>第二级</option>
-        </select>
+            <span style="margin:0 5px 0 0;">层级</span>
+            <select class="easyui-combobox easyui-validatebox" id="attr_level" style="width:102px;" data-options="prompt:'必须项',required:false" >
+                <option value=1>第一级</option>
+                <option value=2>第二级</option>
+            </select>
         </div>
         <div style="margin:4px 0 0 12px;">
             <span style="margin-right:5px;">名称</span><input type="text" class="easyui-textbox easyui-validatebox" id="text" style="width:420px;" data-options="prompt:'必须项',required:true" />
@@ -35,7 +37,11 @@
             <span style="margin-right:5px;">权限</span><input type="text" class="easyui-combobox easyui-validatebox" id="userpower" style="width:420px;" data-options="valueField:'code',textField:'value',url:'async/nav/roles.cc',method:'get',prompt:'必须项',required:false" />
         </div>
         <div style="margin:4px 0 0 12px;">
-            <span style="margin-right:5px;">隐藏</span><input type="text" class="easyui-textbox easyui-validatebox" id="isshow" style="width:300px;" data-options="prompt:'1:显示 0:隐藏',required:false" />
+            <span style="margin-right:5px;">隐藏</span>
+            <select class="easyui-combobox easyui-validatebox" id="isshow" style="width:102px;" data-options="prompt:'必须项',required:false" >
+                <option value=1 selected>显示</option>
+                <option value=0>隐藏</option>
+            </select>
         </div>
     </form>
 </div>

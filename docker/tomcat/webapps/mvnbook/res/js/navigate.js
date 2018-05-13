@@ -77,7 +77,18 @@ function addNavigateServ() {
         type:'POST',
         async:true,
         dataType:'json',
-        data:{'treeid':$('#treeid').val(),'text':$('#text').val(),'state':$('#state').val(),'checked':$('#checked').val(),'iconCls':$('#iconCls').val(),'attr_level':$('#attr_level').combobox('getValue'),'attr_isleaf':$('#attr_isleaf').combobox('getValue'),'attr_parents':$('#attr_parents').val(),'attr_url':$('#attr_url').val(),'power':$('#userpower').combobox('getValue')},
+        data:{'treeid':$('#treeid').val(),
+            'text':$('#text').val(),
+            'state':$('#state').val(),
+            'checked':$('#checked').val(),
+            'iconCls':$('#iconCls').val(),
+            'attr_level':$('#attr_level').combobox('getValue'),
+            'attr_isleaf':$('#attr_isleaf').combobox('getValue'),
+            'attr_parents':$('#attr_parents').val(),
+            'attr_url':$('#attr_url').val(),
+            'power':$('#userpower').combobox('getValue'),
+            'isshow':$('#isshow').combobox('getValue')
+        },
         success:function(resp){
             if(200 == resp.code) {
                 msg = '新增信息成功<br/>编号: ' + $('#treeid').val() + '<br/>名称：' + $('#text').val();
@@ -125,6 +136,7 @@ function uptNavigateDlg(row) {
             $('#attr_level').combobox('select',row.attr_level);
             $('#attr_isleaf').combobox('select',row.attr_isleaf);
             $('#userpower').combobox('select',row.powercd);
+            $('#isshow').combobox('select',row.show?1:0);
         },
         buttons:[{
             text:'Save',
@@ -153,7 +165,18 @@ function uptNavigateServ() {
         type:'POST',
         async:true,
         dataType:'json',
-        data:{'treeid':$('#treeid').val(),'text':$('#text').val(),'state':$('#state').val(),'checked':$('#checked').val(),'iconCls':$('#iconCls').val(),'attr_level':$('#attr_level').combobox('getValue'),'attr_isleaf':$('#attr_isleaf').combobox('getValue'),'attr_parents':$('#attr_parents').val(),'attr_url':$('#attr_url').val(),'power':$('#userpower').combobox('getValue'),'isshow':$('#isshow').val()},
+        data:{'treeid':$('#treeid').val(),
+            'text':$('#text').val(),
+            'state':$('#state').val(),
+            'checked':$('#checked').val(),
+            'iconCls':$('#iconCls').val(),
+            'attr_level':$('#attr_level').combobox('getValue'),
+            'attr_isleaf':$('#attr_isleaf').combobox('getValue'),
+            'attr_parents':$('#attr_parents').val(),
+            'attr_url':$('#attr_url').val(),
+            'power':$('#userpower').combobox('getValue'),
+            'isshow':$('#isshow').combobox('getValue')
+        },
         success:function(resp){
             if(200 == resp.code) {
                 msg = '变更信息成功<br/>编号: ' + $('#treeid').val() + '<br/>名称：' + $('#text').val();

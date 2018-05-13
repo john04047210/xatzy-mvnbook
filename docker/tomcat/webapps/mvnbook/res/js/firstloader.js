@@ -203,7 +203,11 @@ function saveFile(datagrid_id){
     var data = $(datagrid_id).datagrid('getData');
     Downloadify.create('downloadify',{
         filename: function(){
-            return $('#filename').val();
+            fpname = $('#filename').val();
+            if(!fpname.endsWith('.csv')) {
+                fpname += '.csv';
+            }
+            return fpname;
         },
         data: function(){
             var data = $(datagrid_id).datagrid('getData');
