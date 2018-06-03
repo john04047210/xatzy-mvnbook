@@ -12,8 +12,6 @@ tomcat_1:
     - "./docker/tomcat/webapps:/usr/local/tomcat/webapps"
   links:
     - db:mysql
-  depends_on:
-    - db
 
 db:
   image: mariadb:latest
@@ -35,6 +33,4 @@ nginx:
   volumes:
     - "./docker/nginx/conf:/etc/nginx/conf.d"
   links:
-    - tomcat_1
-  depends_on:
     - tomcat_1
