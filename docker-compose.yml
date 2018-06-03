@@ -1,6 +1,7 @@
 # First Node of the first Tomcat virtual host
 tomcat_1:
   image: tomcat:latest
+  restart: always
   environment:
     - MVNBOOK_DB_URL=jdbc:mysql://mysql:3306/mvnbook?useUnicode=true&amp;characterEncoding=UTF-8
     - MVNBOOK_DB_NAME=mvnbook
@@ -11,9 +12,12 @@ tomcat_1:
     - "./docker/tomcat/webapps:/usr/local/tomcat/webapps"
   links:
     - db:mysql
+  depends_on:
+    - db
 
 db:
   image: mariadb:latest
+  restart: always
   environment:
     - MYSQL_ROOT_PASSWORD=dbpass1234
     - MYSQL_DATABASE=mvnbook
@@ -24,10 +28,13 @@ db:
     - ./docker/mysql/conf.d:/etc/mysql/mariadb.conf.d
 
 nginx:
-  image: nginx
+  image: nginx:latest
+  restart: always
   ports:
     - "80:80"
   volumes:
     - "./docker/nginx/conf:/etc/nginx/conf.d"
   links:
+    - tomcat_1
+  depends_on:
     - tomcat_1
