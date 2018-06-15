@@ -5,3 +5,4 @@ README.md
 LICENSE
 docker-compose.yml
 db_dumps.sh
+mysql_bak/
