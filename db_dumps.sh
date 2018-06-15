@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bak_filename="mvnbook_`date "+%Y%m%d"`¥.sql"
+bak_filename="mvnbook_`date "+%Y%m%d"`.sql"
 if [ ! -d ./mysql_bak/ ];then
     mkdir ./mysql_bak
 fi
