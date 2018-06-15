@@ -6,4 +6,4 @@ if [ ! -d ./mysql_bak/ ];then
     mkdir ./mysql_bak
 fi
 
-docker-compose exec db sh -c 'exec mysqldump --databases "$MYSQL_DATABASE" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD"' > mysql_bak/${bak_filename}
+docker exec dockermvnbook_db_1 sh -c 'exec mysqldump --databases "$MYSQL_DATABASE" -u"$MYSQL_USER" -p"$MYSQL_PASSWORD"' > mysql_bak/${bak_filename}
