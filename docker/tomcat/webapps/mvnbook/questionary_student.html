@@ -255,7 +255,7 @@
                              id="inputGlass" data-size="15"
                              class="selectpicker"
                              data-hide-disabled="true" data-live-search="true"
-                             onchange="javascript:getKechengInfo();">
+                             onchange="javascript:getStudents();">
                         <optgroup disabled="disabled" label="disabled">
                             <option>Hidden</option>
                         </optgroup>
@@ -271,7 +271,8 @@
                     <select data-width="368px" name="inputStudent"
                              id="inputStudent" data-size="15"
                              class="selectpicker"
-                             data-hide-disabled="true" data-live-search="true">
+                             data-hide-disabled="true" data-live-search="true"
+                             onchange="javascript:getKechengInfo();">
                         <optgroup disabled="disabled" label="disabled">
                             <option>Hidden</option>
                         </optgroup>
@@ -465,11 +466,33 @@
         });
     }
 
-    function getKechengInfo() {
+    function getStudents() {
         var yuanxi = $('#inputFacultyOption option:selected').val();
         var zhuanye = $('#inputSpecfieldOption option:selected').val();
         var banji = $('#inputGlassOption option:selected').val();
         var param = {"yuanxi":yuanxi,"zhuanye":zhuanye,"banji":banji};
+        // 获取学生信息
+        $.post('/'+pro+'/async/table/getstudent.cc',param,function(data,status){
+            $("#inputStudentOption").empty();
+            $("#inputStudentOption").append('<option value="">请选择</option>');
+            if(data.code == 200) {
+                bookList = data.data;
+                for(var i=0;i<bookList.length;i++) {
+                    book = bookList[i];
+                    $("#inputStudentOption").append('<option value="'+book.xuehao+'">'+book.xingming+'('+book.xuehao+')</option>');
+                }
+                $('.selectpicker').selectpicker('refresh');
+                $('#modal_button').attr('disabled',true);
+            }
+        });
+    }
+
+    function getKechengInfo() {
+        var yuanxi = $('#inputFacultyOption option:selected').val();
+        var zhuanye = $('#inputSpecfieldOption option:selected').val();
+        var banji = $('#inputGlassOption option:selected').val();
+        var student = $('#inputStudentOption option:selected').val();
+        var param = {"yuanxi":yuanxi,"zhuanye":zhuanye,"banji":banji,"student":student};
         $.post('/'+pro+'/async/table/getdiaochastudent.cc',param,function(data,status){
             $("#inputKechengOption").empty();
             $("#inputKechengOption").append('<option value="">请选择</option>');
@@ -488,26 +511,13 @@
                 $('#modal_button').attr('disabled',true);
             }
         });
-        // 获取学生信息
-        $.post('/'+pro+'/async/table/getstudent.cc',param,function(data,status){
-            $("#inputStudentOption").empty();
-            $("#inputStudentOption").append('<option value="">请选择</option>');
-            if(data.code == 200) {
-                bookList = data.data;
-                for(var i=0;i<bookList.length;i++) {
-                    book = bookList[i];
-                    $("#inputStudentOption").append('<option value="'+book.xuehao+'">'+book.xingming+'('+book.xuehao+')</option>');
-                }
-                $('.selectpicker').selectpicker('refresh');
-                $('#modal_button').attr('disabled',true);
-            }
-        });
     }
     function getKechengInfo2() {
         var yuanxi = $('#inputFacultyOption option:selected').val();
         var zhuanye = $('#inputSpecfieldOption option:selected').val();
         var banji = $('#inputGlassOption option:selected').val();
-        var param = {"yuanxi":yuanxi,"zhuanye":zhuanye,"banji":banji};
+        var student = $('#inputStudentOption option:selected').val();
+        var param = {"yuanxi":yuanxi,"zhuanye":zhuanye,"banji":banji,"student":student};
         $.post('/'+pro+'/async/table/getdiaochastudent.cc',param,function(data,status){
             $("#inputKechengOption").empty();
             $("#inputKechengOption").append('<option value="" selected>请选择</option>');
