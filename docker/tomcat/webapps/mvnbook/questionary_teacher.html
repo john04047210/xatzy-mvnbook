@@ -477,7 +477,7 @@
     }
 
     function checkIsChecked() {
-        if($('input[name="R-1-1-1"]:checked').val() == '0') {
+        if($('input[name="R-1-1-1"]').is('checked')) {
             $('input[name="R-1-1-1"]:checked').parents('tr').addClass('danger');
             return false;
         }
