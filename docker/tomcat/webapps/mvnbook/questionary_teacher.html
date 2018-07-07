@@ -219,7 +219,8 @@
                 <div style="float:left;">您对于该本教材的推荐意见：</div>
                 <div style="float:left;margin-left:120px;"><input type="radio" name="R-3-1-1" id="R-3-1-1-10" value="10"><label for="R-3-1-1-10">推荐使用</label></div>
                 <div style="float:left;margin-left:50px;"><input type="radio" name="R-3-1-1" id="R-3-1-1-8" value="8"><label for="R-3-1-1-8">勉强使用</label></div>
-                <div style="float:left;margin-left:50px;"><input type="radio" name="R-3-1-1" id="R-3-1-1-6" value="6"><label for="R-3-1-1-6">不推荐使用</label></div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="R-3-1-1" id="R-3-1-1-6" value="6"><label for="R-3-1-1-6">不推荐使用</label>
+                                 <input type="radio" name="R-3-1-1" id="R-3-1-1-0" value="0" style="display: none;" checked></div>
             </td>
         </tr>
         <tr>
@@ -476,6 +477,10 @@
     }
 
     function checkIsChecked() {
+        if($('input[name="R-3-1-1"]:checked').val() == '0') {
+            alert('请选择推荐意见')
+            return false;
+        }
         return true;
     }
 

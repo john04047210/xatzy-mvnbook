@@ -175,18 +175,20 @@
             <td colspan=4 align="left">无缺页、白页、颠倒页，装订平整</td>
             <td><input type="radio" name="SQ-2-1-1" id="SQ-2-1-1-10" value="10"></td>
             <td><input type="radio" name="SQ-2-1-1" id="SQ-2-1-1-8" value="8"></td>
-            <td><input type="radio" name="SQ-2-1-1" id="SQ-2-1-1-6" value="6"></td>
+            <td><input type="radio" name="SQ-2-1-1" id="SQ-2-1-1-6" value="6">
+                <input type="radio" name="SQ-2-1-1" id="SQ-2-1-1-0" value="0" style="display:none;" checked></td>
         </tr>
         <tr>
             <td colspan=4 align="left">字迹清楚，纸张良好</td>
             <td><input type="radio" name="SQ-2-1-2" id="SQ-2-1-2-10" value="10"></td>
             <td><input type="radio" name="SQ-2-1-2" id="SQ-2-1-2-8" value="8"></td>
-            <td><input type="radio" name="SQ-2-1-2" id="SQ-2-1-2-6" value="6"></td>
+            <td><input type="radio" name="SQ-2-1-2" id="SQ-2-1-2-6" value="6">
+                <input type="radio" name="SQ-2-1-2" id="SQ-2-1-2-0" value="0" style="display:none;" checked></td>
         </tr>
         <tr>
             <td colspan=8 align="left">
                 <div style="float:left;width:200px;">是否属于高职高专教材：</div>
-                <div style="float:left;margin-left:70px;"><input type="radio" name="SQ-3-1-1" id="SQ-3-1-1-1" value="1"><label for="SQ-3-1-1-1">是</label></div>
+                <div style="float:left;margin-left:70px;"><input type="radio" name="SQ-3-1-1" id="SQ-3-1-1-1" value="1" checked><label for="SQ-3-1-1-1">是</label></div>
                 <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-1" id="SQ-3-1-1-0" value="0"><label for="SQ-3-1-1-0">否</label></div>
             </td>
         </tr>
@@ -195,7 +197,8 @@
                 <div style="float:left;width:200px;">您对于该本教材的推荐意见：</div>
                 <div style="float:left;margin-left:70px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-10" value="10"><label for="SQ-3-1-2-10">推荐使用</label></div>
                 <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-8" value="8"><label for="SQ-3-1-2-8">勉强使用</label></div>
-                <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-6" value="6"><label for="SQ-3-1-2-6">不推荐使用</label></div>
+                <div style="float:left;margin-left:50px;"><input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-6" value="6"><label for="SQ-3-1-2-6">不推荐使用</label>
+                                 <input type="radio" name="SQ-3-1-2" id="SQ-3-1-2-0" value="0" style="display: none;" checked></div>
             </td>
         </tr>
         <tr>
@@ -597,6 +600,10 @@
     }
 
     function checkIsChecked() {
+        if($('input[name="SQ-3-1-2"]:checked').val() == '0') {
+            alert('请选择推荐意见')
+            return false;
+        }
         return true;
     }
 
