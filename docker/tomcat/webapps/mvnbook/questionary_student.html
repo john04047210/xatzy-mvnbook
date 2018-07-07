@@ -600,9 +600,57 @@
     }
 
     function checkIsChecked() {
+        if($('input[name="SQ-1-1-1"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-1"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-1-1-2"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-2"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-1-1-3"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-3"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-1-1-4"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-4"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-1-1-5"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-5"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-1-1-6"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-6"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-1-1-7"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-7"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-1-1-8"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-8"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-1-1-9"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-9"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-1-1-10"]:checked').val() == '0') {
+            $('input[name="SQ-1-1-10"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-2-1-1"]:checked').val() == '0') {
+            $('input[name="SQ-2-1-1"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
+        if($('input[name="SQ-2-1-2"]:checked').val() == '0') {
+            $('input[name="SQ-2-1-2"]:checked').parents('tr').addClass('danger');
+            return false;
+        }
         if($('input[name="SQ-3-1-2"]:checked').val() == '0') {
             $('input[name="SQ-3-1-2"]:checked').parents('tr').addClass('danger');
-            alert('请选择推荐意见')
+            alert('请选择推荐意见');
             return false;
         }
         return true;
