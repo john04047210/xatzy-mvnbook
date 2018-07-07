@@ -478,6 +478,7 @@
 
     function checkIsChecked() {
         if($('input[name="R-3-1-1"]:checked').val() == '0') {
+            $('input[name="R-3-1-1"]:checked').parents('tr').addClass('danger');
             alert('请选择推荐意见')
             return false;
         }
