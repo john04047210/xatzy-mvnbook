@@ -374,6 +374,13 @@
                     $("#inputTeacherOption").append('<option value="'+book.jiaoshi_id+'">'+book.jiaoshi+zhiwu+'</option>');
                 }
                 $('.selectpicker').selectpicker('refresh');
+            } else {
+                if (data.code == 520) {
+                    alert(data.msg);
+                    closeme();
+                }
+                alert(data.msg);
+                return;
             }
         });
 
@@ -386,6 +393,17 @@
         var day = mydate.getDate();
         $('#ctime').text(year+'-'+month+'-'+day);
     });
+
+    function closeme(){
+        var browserName=navigator.appName;
+        if (browserName=="Netscape") {
+            window.open('','_parent','');
+            window.close();
+        } else if (browserName=="Microsoft Internet Explorer") {
+            window.opener = "whocares";
+            window.close();
+        }
+    };
 
     function getKechengInfo() {
         var jiaoshi_id = $('#inputTeacherOption option:selected').val();

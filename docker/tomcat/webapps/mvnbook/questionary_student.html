@@ -419,6 +419,13 @@
                     $("#inputFacultyOption").append('<option value="'+book.yuanxi+'">'+book.yuanxi+'</option>');
                 }
                 $('.selectpicker').selectpicker('refresh');
+            } else {
+                if (data.code == 520) {
+                    alert(data.msg);
+                    closeme();
+                }
+                alert(data.msg);
+                return;
             }
         });
 
@@ -427,6 +434,17 @@
         $('#modal_button').attr('disabled',true);
         $('.container').hide();
     });
+
+    function closeme(){
+        var browserName=navigator.appName;
+        if (browserName=="Netscape") {
+            window.open('','_parent','');
+            window.close();
+        } else if (browserName=="Microsoft Internet Explorer") {
+            window.opener = "whocares";
+            window.close();
+        }
+    };
 
     function getSpecfieldInfo() {
         var yuanxi = $('#inputFacultyOption option:selected').val();
