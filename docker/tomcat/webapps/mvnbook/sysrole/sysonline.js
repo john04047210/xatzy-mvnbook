@@ -22,7 +22,7 @@ function searchOnlineInfo(){
 
 function editonline() {
     var startDate = $('#startDate').datebox('getValue');
-    var endDate = $('#startDate').datebox('getValue');
+    var endDate = $('#endDate').datebox('getValue');
     var url = 'async/nav/uptonline.cc';
     $.post(url, {startTime: startDate, endTime: endDate}, function(resp){
         if(200 == resp.code) {

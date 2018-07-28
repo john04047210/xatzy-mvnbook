@@ -1,6 +1,6 @@
 <div class="easyui-layout" data-options="fit:true">
     <div data-options="region:'center',split:false,border:false" style="overflow:auto;">
-        <form id="online_date">
+        <div id="online_date" style="margin: 30px;">
             <div>
                 <label for="startDate">开始时间:</label>
                 <input id="startDate" name="startDate" type="text" class="easyui-datebox" required="required:true" />
@@ -9,9 +9,9 @@
                 <label for="endDate">结束时间:</label>
                 <input id="endDate" name="startDate" type="text" class="easyui-datebox" required="required:true" />
             </div>
-        </form>
-        <div id="sysonline_tb_edit" style="padding:1px; height:auto;">
-            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" onclick="editonline()">更新</a>
+            <div id="sysonline_tb_edit" style="padding:1px; height:auto;">
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" onclick="editonline()">更新</a>
+            </div>
         </div>
     </div>
 </div>
