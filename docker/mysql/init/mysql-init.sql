@@ -4,7 +4,8 @@ drop table if exists online_time;
 create table online_time (
   id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   StartTime bigint unsigned not null default 0,
-  EndTime bigint unsigned not null default 0
+  EndTime bigint unsigned not null default 0,
+  PRIMARY KEY (id)
 ) DEFAULT CHARSET=utf8;
 insert into online_time (StartTime, EndTime) values (1467725966324, 1467725966324);
 
