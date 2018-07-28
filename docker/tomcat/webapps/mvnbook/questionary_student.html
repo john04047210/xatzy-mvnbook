@@ -420,11 +420,10 @@
                 }
                 $('.selectpicker').selectpicker('refresh');
             } else {
+                alert(data.msg);
                 if (data.code == 520) {
-                    alert(data.msg);
                     closeme();
                 }
-                alert(data.msg);
                 return;
             }
         });
@@ -436,15 +435,8 @@
     });
 
     function closeme(){
-        var browserName=navigator.appName;
-        if (browserName=="Netscape") {
-            window.open('','_parent','');
-            window.close();
-        } else if (browserName=="Microsoft Internet Explorer") {
-            window.opener = "whocares";
-            window.close();
-        }
-    };
+        setTimeout(function(){var ww = window.open(window.location, '_self'); ww.close(); }, 1000);
+    }
 
     function getSpecfieldInfo() {
         var yuanxi = $('#inputFacultyOption option:selected').val();

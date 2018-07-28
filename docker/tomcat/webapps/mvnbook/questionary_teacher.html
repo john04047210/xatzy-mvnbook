@@ -375,11 +375,10 @@
                 }
                 $('.selectpicker').selectpicker('refresh');
             } else {
+                alert(data.msg);
                 if (data.code == 520) {
-                    alert(data.msg);
                     closeme();
                 }
-                alert(data.msg);
                 return;
             }
         });
