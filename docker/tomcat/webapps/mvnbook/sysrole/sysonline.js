@@ -11,8 +11,6 @@ $(function(){
 // 获取系统开放时间
 function searchOnlineInfo(){
     var url = 'async/nav/getonline.cc';
-    var queryParams = {'jiaocai':'','banji':'','jiaoshi':''};
-    loadDataGrid_data('sysonline_dg', url, queryParams, 'GET');
     $.get(url, function(resp){
         if(200 == resp.code) {
             dateRange = resp.data;
