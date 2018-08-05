@@ -255,6 +255,8 @@
         <url-pattern>/async/diaocha/getrs1detail.cc</url-pattern>
         <!-- 按照班级教材生成第一阶段统计结果 -->
         <url-pattern>/async/diaocha/creaters1.cc</url-pattern>
+        <!-- 撤销指定教材评价 -->
+        <url-pattern>/async/diaocha/rebackrs1.cc</url-pattern>
         <!-- 班级为单位的统计结果 -->
         <url-pattern>/async/diaocha/getrsglass.cc</url-pattern>
         <!-- 教材为单位的统计结果 -->

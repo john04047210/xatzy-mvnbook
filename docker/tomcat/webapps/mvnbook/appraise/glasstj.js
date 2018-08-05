@@ -36,28 +36,53 @@ function searchglasstj(value,name){
     loadDataGrid_data('glasstj_dg', url, queryParams, 'POST');
 }
 
-function editglasstj(type) {
+function rebacktj() {
     var rows = $('#glasstj_dg').datagrid('getSelections');
-    if(2 != type && rows.length) {
+    if(rows.length) {
+        uuids = [];
         for(var i = 0; i < rows.length; i++) {
             var row = rows[i];
-            if(0 == type) {
-                // 删除
-                delAccountDlg(row.uid);
-            } else if(1 == type) {
-                // 更新
-                uptAccountDlg(row.uid, row.phone, row.nickname, row.powercd);
-            } else if(3 == type) {
-                // 结束指定教材评价
-                endAppdetailDlg(row.uuid);
-            }
+            // 撤销指定教材评价
+            uuids.push(row.uuid);
         }
-    } else if(2 == type) {
-        // 新增
-        addAccountDlg();
+        rebackAppdetailSevr(uuids);
     } else {
-        $.messager.alert('提示','请选中要修改的行','info');
+        $.messager.alert('提示','请选中要撤销的行','info');
     }
+}
+
+// 撤销指定教材评价逻辑(服务器交互)
+function rebackAppdetailSevr(uuids) {
+    var msg = '';
+
+    $.ajax({
+        url:'async/diaocha/rebackrs1.cc',
+        type:'POST',
+        async:true,
+        dataType:'json',
+        data:{'uuid':uuids.join(',')},
+        success:function(resp){
+            if(200 == resp.code) {
+                msg = '操作成功';
+                searchglasstjall();
+                $.messager.alert('提示',msg,'info',function(){$('#dlgPopup').dialog('close');});
+            } else if(401 == resp.code) {
+                $.messager.alert('错误','登陆失效，请重新登陆','error',function(){window.location.href=com.global.login_href;});
+            } else if(406 == resp.code) {
+                // 操作安全码校验失败
+                $.messager.alert('错误',resp.msg,'error',function(){$('#dlgPopup').dialog('close');});
+            } else if(412 <= resp.code) {
+                // 验证码校验失败
+                $.messager.alert('错误',resp.msg,'error');
+            } else {
+                $.messager.alert('错误','操作失败','error',function(){$('#dlgPopup').dialog('close');});
+            }
+        },
+        error:function(err){
+            $.messager.alert('错误','服务器错误','error',function(){$('#dlgPopup').dialog('close');});
+        }
+    });
+    return;
 }
 
 // 保存评价库信息
