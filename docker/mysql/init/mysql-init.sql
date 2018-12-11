@@ -61,6 +61,7 @@ insert into navigate (treeid,text,state,checked,iconCls,power,attr_level,attr_is
 (707,'班级统计','open',0,'icon-user',2,2,1,7,'appraise/glasstj.html',1479229798988,1479229798988,'N'),
 (708,'教材统计','open',0,'icon-book',2,2,1,7,'appraise/jiaocaitj.html',1479229798988,1479229798988,'N'),
 (709,'教师统计','open',0,'icon-role',2,2,1,7,'appraise/jiaoshitj.html',1479229798988,1479229798988,'N'),
+(710,'未评价学生','open',0,'icon-user',2,2,1,7,'appraise/notappraised.html',1479229798988,1479229798988,'N'),
 (890,'Excel导入','open',0,'icon-table',1,2,1,8,'table/importfile.html',1480085209153,1480085248032,'U');
 
 drop table if exists account;
@@ -224,4 +225,15 @@ create table students (
   Status char(1) not null default 'N',
   PRIMARY KEY (id),
   key idx_students_xuehao (xuehao)
+) DEFAULT CHARSET=utf8;
+
+drop table if exists students_not_appraised;
+create table students_not_appraised (
+  id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  uuid char(32) not null,
+  yuanxi varchar(64),
+  xuehao varchar(20) not null,
+  xingming varchar(12),
+  PRIMARY KEY (id),
+  key idx_students_uuid (uuid)
 ) DEFAULT CHARSET=utf8;
